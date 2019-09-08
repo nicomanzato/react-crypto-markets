@@ -1,0 +1,46 @@
+import React from 'react';
+import './CryptocurrencyList.scss';
+
+// COMPONENTS
+import { ChangeIndicator } from '../ChangeIndicator/ChangeIndicator';
+import { CryptocurrencyIcon } from '../CryptocurrencyIcon/CryptocurrencyIcon';
+import { Chart } from '../common/Chart/Chart';
+
+// CONSTANTS
+import { constants } from '../../constants/constants';
+import { formatMoney, formatMoneyReducer } from '../../utils/utils';
+
+export const CryptocurrencyList = ({ data }) => {
+  return (
+    <div className="cryptocurrency-list">
+      {data.map(cryptocurrency => (
+        <div className="cryptocurrency-list__cryptocurrency-container" key={cryptocurrency.symbol}>
+          <CryptocurrencyIcon data={cryptocurrency.symbol} className={'cryptocurrency-list__cryptocurrency-icon'} />
+          <div className="cryptocurrency-list__cryptocurrency-list-item cryptocurrency-list__cryptocurrency-name">
+            {cryptocurrency.name}
+          </div>
+          <div className="cryptocurrency-list__cryptocurrency-list-item cryptocurrency-list__cryptocurrency-price-container">
+            <div className="cryptocurrency-list__cryptocurrency-price">
+              ${formatMoney(cryptocurrency.quote.USD.price)}
+            </div>
+            <ChangeIndicator
+              data={cryptocurrency.quote.USD.percent_change_24h}
+              className={'cryptocurrency-list__cryptocurrency-price-change'}
+            />
+          </div>
+          <div className="cryptocurrency-list__cryptocurrency-list-item cryptocurrency-list__cryptocurrency-market-cap-container">
+            <div className="cryptocurrency-list__cryptocurrency-market-cap-label">Market Cap</div>
+            <div className="cryptocurrency-list__cryptocurrency-market-cap">
+              ${formatMoneyReducer(cryptocurrency.quote.USD.market_cap)}
+            </div>
+          </div>
+          <Chart
+            className={'cryptocurrency-list__cryptocurrency-price-change-chart'}
+            width={310}
+            data={cryptocurrency.historicalPrice}
+          />
+        </div>
+      ))}
+    </div>
+  );
+};

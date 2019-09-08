@@ -1,0 +1,20 @@
+@import '../../variables.scss';
+
+.markets-page {
+  padding: $spacings-M 0;
+
+  &__header {
+    color: $primary-text-color;
+    font-size: $font-size-header;
+    font-weight: bold;
+    letter-spacing: 5px;
+    padding: $spacings-XXXL 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: $tablet-breakpoint) {
+  .markets-page {
+  }
+}

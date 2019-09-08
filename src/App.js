@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import './App.scss';
 
-function App() {
+import { connect } from 'react-redux';
+import { LoadCryptocurrencies } from './store/cryptocurrency/cryptocurrency.actions';
+
+//import { Footer } from './components/footer/footer';
+import { Header } from './components/Header/Header';
+import { Router } from './Router';
+
+const App = ({ LoadCryptocurrencies }) => {
+  useEffect(() => {
+    LoadCryptocurrencies();
+  }, [LoadCryptocurrencies]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.StrictMode>
+      <div className="app">
+        <Header />
+        <Router />
+      </div>
+    </React.StrictMode>
   );
+};
+
+function mapStateToProps(state, props) {
+  return {};
 }
 
-export default App;
+const mapDispatchToProps = {
+  LoadCryptocurrencies: () => LoadCryptocurrencies(),
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

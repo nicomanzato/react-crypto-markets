@@ -1,0 +1,17 @@
+@import '../../variables.scss';
+
+.change-indicator {
+  &__value {
+    padding: 30px;
+    color: white;
+  }
+
+  &__value--positive {
+    color: green;
+    color: white;
+  }
+
+  &__value--positive {
+    color: white;
+  }
+}

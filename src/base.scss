@@ -1,0 +1,20 @@
+$font-size: 16;
+
+@function rem-calc($size) {
+  $remSize: $size / $font-size;
+  @return #{$remSize}rem;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: $font-size;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}

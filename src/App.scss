@@ -1,0 +1,12 @@
+@import 'variables.scss';
+
+html {
+  font-family: $primary-font-family;
+  background-color: $secondary-background-color;
+}
+
+.app {
+  position: relative;
+  margin: auto;
+  max-width: $desktop-breakpoint;
+}

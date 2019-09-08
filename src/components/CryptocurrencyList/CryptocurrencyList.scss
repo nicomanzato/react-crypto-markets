@@ -1,0 +1,99 @@
+@import '../../variables.scss';
+
+.cryptocurrency-list {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__cryptocurrency-container {
+    position: relative;
+    align-items: center;
+    background-color: $primary-background-color;
+    background: $primary-gradient;
+    box-shadow: 10px 10px 10px $primary-background-color;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    min-height: 520px;
+    margin: $spacings-M $spacings-M;
+    padding: $spacings-L $spacings-L 0 $spacings-L;
+    width: 300px;
+  }
+
+  &__cryptocurrency-icon {
+    width: 100px;
+  }
+
+  &__cryptocurrency-list-item {
+    height: 100px;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__cryptocurrency-name {
+    align-items: center;
+    color: $primary-text-color;
+    display: flex;
+    font-size: $font-size-title;
+    font-weight: bold;
+    justify-content: center;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  &__cryptocurrency-price-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  &__cryptocurrency-price {
+    color: $primary-text-color;
+    font-size: $font-size-title;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__cryptocurrency-price-change {
+    font-size: $font-size-title;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__cryptocurrency-market-cap-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  &__cryptocurrency-market-cap-label {
+    color: $primary-text-color;
+    font-size: $font-size-title;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  &__cryptocurrency-market-cap {
+    color: $primary-text-color;
+    font-size: $font-size-title;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__cryptocurrency-price-change-chart {
+    position: absolute;
+    bottom: 0;
+    left: -$spacings-S;
+    bottom: -$spacings-S;
+  }
+}
+
+@media screen and (max-width: $tablet-breakpoint) {
+  .cryptocurrency-list {
+  }
+}
