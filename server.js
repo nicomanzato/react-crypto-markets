@@ -17,8 +17,10 @@ app.get('/assets/svg', function(req, res, next) {
   res.sendFile(__dirname + '/assets/svg/{icon}.svg'.replace('{icon}', 'btc'));
 });
 
+/*
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
+*/
 
 app.listen(port);
