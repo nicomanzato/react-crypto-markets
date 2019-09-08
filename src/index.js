@@ -6,6 +6,7 @@ import 'typeface-montserrat';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import * as serviceWorker from './serviceWorker';
+require('dotenv').config();
 
 ReactDOM.render(
   <Provider store={store}>

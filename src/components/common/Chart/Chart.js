@@ -1,8 +1,8 @@
-import React from 'react';
-import { Line } from 'react-chartjs-2';
+import React, { useEffect, useState } from 'react';
+import Chart from 'chart.js';
 
 const defaultData = {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  labels: [],
   datasets: [
     {
       label: '',
@@ -23,7 +23,7 @@ const defaultData = {
       pointHoverBorderWidth: 0,
       pointRadius: 0,
       pointHitRadius: 0,
-      data: [65, 59, 80, 81, 56, 55, 40],
+      data: [],
     },
   ],
 };
@@ -56,17 +56,29 @@ const defaultOptions = {
   },
 };
 
-export const Chart = ({ width, height, data, options, className }) => {
-  const chartData = { ...defaultData, data };
+export const LineChart = ({ width, height, data, id, options, className }) => {
+  const [chartRef, setCharRef] = useState(React.createRef());
 
-  chartData.labels = data.map(dailyPrice => dailyPrice.date);
-  chartData.datasets.data = data.map(dailyPrice => dailyPrice.price);
+  useEffect(() => {
+    const chartData = defaultData;
+    const myChartRef = chartRef.current.getContext('2d');
+
+    chartData.labels = data.history.map(dailyPrice => dailyPrice.date);
+    chartData.datasets[0].label = id;
+    chartData.datasets[0].data = data.history.map(dailyPrice => dailyPrice.price);
+
+    new Chart(myChartRef, {
+      type: 'line',
+      data: chartData,
+      options: defaultOptions,
+    });
+  }, []);
 
   return (
     <div className={className}>
-      <Line data={chartData} options={{ ...defaultOptions }} width={width} />
+      <canvas id={id} ref={chartRef} width={width} height={height} />
     </div>
   );
 };
 
-export default Chart;
+export default LineChart;

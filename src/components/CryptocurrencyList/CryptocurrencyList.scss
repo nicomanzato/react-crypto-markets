@@ -87,9 +87,9 @@
 
   &__cryptocurrency-price-change-chart {
     position: absolute;
-    bottom: 0;
     left: -$spacings-S;
     bottom: -$spacings-S;
+    opacity: 0.5;
   }
 }
 

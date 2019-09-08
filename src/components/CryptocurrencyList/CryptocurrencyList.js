@@ -4,7 +4,7 @@ import './CryptocurrencyList.scss';
 // COMPONENTS
 import { ChangeIndicator } from '../ChangeIndicator/ChangeIndicator';
 import { CryptocurrencyIcon } from '../CryptocurrencyIcon/CryptocurrencyIcon';
-import { Chart } from '../common/Chart/Chart';
+import { LineChart } from '../common/Chart/Chart';
 
 // CONSTANTS
 import { constants } from '../../constants/constants';
@@ -34,10 +34,14 @@ export const CryptocurrencyList = ({ data }) => {
               ${formatMoneyReducer(cryptocurrency.quote.USD.market_cap)}
             </div>
           </div>
-          <Chart
+          <LineChart
             className={'cryptocurrency-list__cryptocurrency-price-change-chart'}
             width={310}
-            data={cryptocurrency.historicalPrice}
+            id={'cryptocurrency-chart-' + cryptocurrency.id}
+            data={{
+              id: cryptocurrency.id,
+              history: cryptocurrency.historicalPrice.splice(cryptocurrency.historicalPrice.length - 7, 7),
+            }}
           />
         </div>
       ))}
