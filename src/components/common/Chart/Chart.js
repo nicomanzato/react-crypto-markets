@@ -57,7 +57,7 @@ const defaultOptions = {
 };
 
 export const LineChart = ({ width, height, data, id, options, className }) => {
-  const [chartRef, setCharRef] = useState(React.createRef());
+  const [chartRef] = useState(React.createRef());
 
   useEffect(() => {
     const chartData = defaultData;
@@ -72,11 +72,11 @@ export const LineChart = ({ width, height, data, id, options, className }) => {
       data: chartData,
       options: defaultOptions,
     });
-  }, []);
+  }, [chartRef, data.history, id]);
 
   return (
     <div className={className}>
-      <canvas id={id} ref={chartRef} width={width} height={height} />
+      <canvas id={id} ref={chartRef} width={width} height={height} alt={id} />
     </div>
   );
 };

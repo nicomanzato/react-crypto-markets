@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { CryptocurrencyList } from '../../components/CryptocurrencyList/CryptocurrencyList';
 
 // CONSTANTS
-import { constants } from '../../constants/constants';
+//import { constants } from '../../constants/constants';
 
 export const MarketsPage = ({ cryptocurrencies, isLoadingCryptocurrencies }) => {
   return (

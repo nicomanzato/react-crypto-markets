@@ -15,6 +15,7 @@ export const CryptocurrencyIcon = ({ className, data }) => {
     <div className={'cryptocurrency-icon'}>
       {!error && (
         <img
+          alt={data}
           src={constants.RESOURCES.SVG_PATH.replace('{symbol}', data.toLowerCase())}
           className={className}
           onError={handleOnError}

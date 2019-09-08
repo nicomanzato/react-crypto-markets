@@ -7,7 +7,7 @@ import { CryptocurrencyIcon } from '../CryptocurrencyIcon/CryptocurrencyIcon';
 import { LineChart } from '../common/Chart/Chart';
 
 // CONSTANTS
-import { constants } from '../../constants/constants';
+//import { constants } from '../../constants/constants';
 import { formatMoney, formatMoneyReducer } from '../../utils/utils';
 
 export const CryptocurrencyList = ({ data }) => {
