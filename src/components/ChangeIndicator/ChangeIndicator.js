@@ -1,16 +1,17 @@
 import React from 'react';
 import './ChangeIndicator.scss';
 
-export const ChangeIndicator = ({ data, className }) => {
+import classNames from 'classnames/bind';
+
+export const ChangeIndicator = ({ data }) => {
   return (
     <div
-      className={[
-        className,
-        'change-indicator__value',
-        data > 0 ? 'change-indicator__value--positive' : 'change-indicator__value--negative',
-      ]}
+      className={classNames('change-indicator__value', {
+        'change-indicator__value--positive': data > 0,
+        'change-indicator__value--negative': data < 0,
+      })}
     >
-      {data.toFixed(2)}% {data > 0 ? <>UP</> : <>DOWN</>}
+      {data.toFixed(2)}%
     </div>
   );
 };

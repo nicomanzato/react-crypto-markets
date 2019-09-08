@@ -21,7 +21,7 @@
     "typeface-montserrat": "0.0.75"
   },
   "scripts": {
-    "serve": "npm:client",
+    "serve": "npm run client",
     "client": "react-scripts start",
     "start": "node server.js",
     "build": "react-scripts build",

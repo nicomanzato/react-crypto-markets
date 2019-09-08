@@ -2,16 +2,35 @@
 
 .change-indicator {
   &__value {
-    padding: 30px;
-    color: white;
   }
 
   &__value--positive {
-    color: green;
-    color: white;
+    color: $primary-green-positive;
   }
 
-  &__value--positive {
-    color: white;
+  &__value--positive::after {
+    content: '';
+    display: inline-block;
+    border-right: 3px solid $primary-green-positive;
+    border-bottom: 3px solid $primary-green-positive;
+    width: 10px;
+    height: 10px;
+    margin: 0 0 0 $spacings-S;
+    transform: rotate(-135deg);
+  }
+
+  &__value--negative {
+    color: $primary-red-negative;
+  }
+
+  &__value--negative::after {
+    content: '';
+    display: inline-block;
+    border-right: 3px solid $primary-red-negative;
+    border-bottom: 3px solid $primary-red-negative;
+    width: 10px;
+    height: 10px;
+    margin: 0 0 $spacings-XS $spacings-S;
+    transform: rotate(45deg);
   }
 }

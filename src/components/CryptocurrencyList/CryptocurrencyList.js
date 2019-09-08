@@ -23,10 +23,7 @@ export const CryptocurrencyList = ({ data }) => {
             <div className="cryptocurrency-list__cryptocurrency-price">
               ${formatMoney(cryptocurrency.quote.USD.price)}
             </div>
-            <ChangeIndicator
-              data={cryptocurrency.quote.USD.percent_change_24h}
-              className={'cryptocurrency-list__cryptocurrency-price-change'}
-            />
+            <ChangeIndicator data={cryptocurrency.quote.USD.percent_change_24h} />
           </div>
           <div className="cryptocurrency-list__cryptocurrency-list-item cryptocurrency-list__cryptocurrency-market-cap-container">
             <div className="cryptocurrency-list__cryptocurrency-market-cap-label">Market Cap</div>
