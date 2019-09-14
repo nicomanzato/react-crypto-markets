@@ -1,19 +1,39 @@
 @import '../../variables.scss';
 
 .header {
-  box-shadow: 10px 10px 10px $primary-background-color;
-  margin: 0 0 $spacings-M 0;
   background: $primary-gradient;
   border-bottom: 10px solid $blueBondi;
+  box-shadow: 10px 10px 10px $primary-background-color;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 $spacings-M 0;
+  padding: $spacings-XXL $spacings-XL;
 
   &__title {
     color: $primary-text-color;
     font-size: $font-size-header;
     font-weight: bold;
     letter-spacing: 5px;
-    padding: $spacings-XXL 0 $spacings-XXL 0;
     text-align: center;
     text-transform: uppercase;
     text-shadow: 2px 2px $blueMirage;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__nav-element {
+    color: $primary-text-color;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  &__nav-element:hover {
+    color: $secondary-text-color;
   }
 }
