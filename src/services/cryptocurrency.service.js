@@ -6,15 +6,18 @@ import CryptocurrencyMock from './mock/cryptocurrency.mock.json';
 
 export const getCryptocurrencies = async () => {
   return genericGet(
-    process.env.REACT_APP_CRYPTOCURRENCY_API + constants.ENDPOINTS.GET_CRYPTOCURRENCIES,
+    { url: process.env.REACT_APP_CRYPTOCURRENCY_API + constants.ENDPOINTS.GET_CRYPTOCURRENCIES },
     CryptocurrenciesMock
   );
 };
 
 export const getCryptocurrency = async cryptocurrencyId => {
   return genericGet(
-    process.env.REACT_APP_CRYPTOCURRENCY_API +
-      constants.ENDPOINTS.GET_CRYPTOCURRENCY.replace('{cryptocurrencyId}', cryptocurrencyId.toLowerCase()),
+    {
+      url:
+        process.env.REACT_APP_CRYPTOCURRENCY_API +
+        constants.ENDPOINTS.GET_CRYPTOCURRENCY.replace('{cryptocurrencyId}', cryptocurrencyId.toLowerCase()),
+    },
     CryptocurrencyMock
   );
 };
