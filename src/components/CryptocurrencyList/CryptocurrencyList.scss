@@ -22,6 +22,20 @@
     width: 300px;
   }
 
+  &__cryptocurrency-rank {
+    align-items: center;
+    color: $primary-text-color;
+    display: flex;
+    font-size: $font-size-title;
+    font-weight: bold;
+    justify-content: center;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: absolute;
+    right: 0;
+    margin: 0 $spacings-M;
+  }
+
   &__cryptocurrency-icon {
     width: 100px;
   }
