@@ -17,8 +17,7 @@ export const MarketsPage = ({ cryptocurrencies, isLoadingCryptocurrencies, LoadC
     <>
       {!isLoadingCryptocurrencies && (
         <div className="markets-page">
-          <div className="markets-page__header">Crypto Markets</div>
-          <CryptocurrencyList data={cryptocurrencies} onElementClick={LoadCryptocurrencyDetails} />
+          <CryptocurrencyList data={cryptocurrencies} onElementClick={element => console.log(element)} />
         </div>
       )}
       {isLoadingCryptocurrencies && <LoadingIndicator />}
