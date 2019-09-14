@@ -19,6 +19,7 @@ export const CryptocurrencyList = ({ data, onElementClick }) => {
           key={cryptocurrency.symbol}
           onClick={() => onElementClick(cryptocurrency.symbol)}
         >
+          <div className="cryptocurrency-list__cryptocurrency-rank">#{cryptocurrency.cmc_rank}</div>
           <CryptocurrencyIcon data={cryptocurrency.symbol} className={'cryptocurrency-list__cryptocurrency-icon'} />
           <div className="cryptocurrency-list__cryptocurrency-list-item cryptocurrency-list__cryptocurrency-name">
             {cryptocurrency.name}
