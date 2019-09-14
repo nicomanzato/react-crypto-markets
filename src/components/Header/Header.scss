@@ -1,13 +1,19 @@
 @import '../../variables.scss';
 
 .header {
-  height: 60px;
-  background-color: $secondary-background-color;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 300px;
+  box-shadow: 10px 10px 10px $primary-background-color;
+  margin: 0 0 $spacings-M 0;
+  background: $primary-gradient;
+  border-bottom: 10px solid $blueBondi;
+
+  &__title {
+    color: $primary-text-color;
+    font-size: $font-size-header;
+    font-weight: bold;
+    letter-spacing: 5px;
+    padding: $spacings-XXL 0 $spacings-XXL 0;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 2px 2px $blueMirage;
+  }
 }
