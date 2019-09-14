@@ -10,11 +10,15 @@ import { LineChart } from '../common/Chart/Chart';
 //import { constants } from '../../constants/constants';
 import { formatMoney, formatMoneyReducer } from '../../utils/utils';
 
-export const CryptocurrencyList = ({ data }) => {
+export const CryptocurrencyList = ({ data, onElementClick }) => {
   return (
     <div className="cryptocurrency-list">
       {data.map(cryptocurrency => (
-        <div className="cryptocurrency-list__cryptocurrency-container" key={cryptocurrency.symbol}>
+        <div
+          className="cryptocurrency-list__cryptocurrency-container"
+          key={cryptocurrency.symbol}
+          onClick={() => onElementClick(cryptocurrency.symbol)}
+        >
           <CryptocurrencyIcon data={cryptocurrency.symbol} className={'cryptocurrency-list__cryptocurrency-icon'} />
           <div className="cryptocurrency-list__cryptocurrency-list-item cryptocurrency-list__cryptocurrency-name">
             {cryptocurrency.name}

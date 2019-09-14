@@ -16,7 +16,7 @@ export const MarketsPage = ({ cryptocurrencies, isLoadingCryptocurrencies }) => 
       {!isLoadingCryptocurrencies && (
         <div className="markets-page">
           <div className="markets-page__header">Crypto Markets</div>
-          <CryptocurrencyList data={cryptocurrencies} />
+          <CryptocurrencyList data={cryptocurrencies} onElementClick={element => console.log(element)} />
         </div>
       )}
       {isLoadingCryptocurrencies && 'Loading'}

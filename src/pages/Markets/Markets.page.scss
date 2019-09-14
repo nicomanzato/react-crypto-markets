@@ -8,9 +8,10 @@
     font-size: $font-size-header;
     font-weight: bold;
     letter-spacing: 5px;
-    padding: $spacings-XXXL 0;
+    padding: $spacings-XXL 0 $spacings-XXXL 0;
     text-align: center;
     text-transform: uppercase;
+    text-shadow: 2px 2px $blueMirage;
   }
 }
 

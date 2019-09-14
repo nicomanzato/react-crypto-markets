@@ -6,6 +6,7 @@ import { LoadCryptocurrencies } from './store/cryptocurrency/cryptocurrency.acti
 
 //import { Footer } from './components/footer/footer';
 import { Header } from './components/Header/Header';
+import { Background } from './components/Background/Background';
 import { Router } from './Router';
 
 const App = ({ LoadCryptocurrencies }) => {
@@ -15,6 +16,7 @@ const App = ({ LoadCryptocurrencies }) => {
   return (
     <React.StrictMode>
       <div className="app">
+        <Background />
         <Header />
         <Router />
       </div>

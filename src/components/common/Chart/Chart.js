@@ -29,6 +29,7 @@ const defaultData = {
 };
 
 const defaultOptions = {
+  animation: false,
   legend: {
     display: false,
   },
