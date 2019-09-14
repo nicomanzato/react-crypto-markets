@@ -33,6 +33,8 @@ export function formatMoneyReducer(amount, reduceBy = 1000000000, symbol = 'B') 
 export const genericGet = async ({ url }, mock) => {
   let data;
 
+  console.log(url);
+
   if (process.env.NODE_ENV !== 'development') {
     data = (await Axios.get(url)).data;
   } else {

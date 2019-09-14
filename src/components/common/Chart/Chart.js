@@ -64,10 +64,12 @@ export const LineChart = ({ width, height, data, id, options, className }) => {
     const chartData = defaultData;
     const myChartRef = chartRef.current.getContext('2d');
 
-    chartData.labels = data.history.map(dailyPrice => dailyPrice.date);
-    chartData.datasets[0].label = id;
-    chartData.datasets[0].data = data.history.map(dailyPrice => dailyPrice.price);
+    if (data.history) {
+      chartData.labels = data.history.map(dailyPrice => dailyPrice.date);
+      chartData.datasets[0].data = data.history.map(dailyPrice => dailyPrice.price);
+    }
 
+    chartData.datasets[0].label = id;
     new Chart(myChartRef, {
       type: 'line',
       data: chartData,

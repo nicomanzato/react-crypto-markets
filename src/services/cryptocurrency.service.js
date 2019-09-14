@@ -11,7 +11,7 @@ export const getCryptocurrencies = async () => {
   );
 };
 
-export const getCryptocurrency = async cryptocurrencyId => {
+export const getCryptocurrency = async (cryptocurrencyId = '') => {
   return genericGet(
     {
       url:

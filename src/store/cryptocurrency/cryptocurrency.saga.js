@@ -1,23 +1,39 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
 
-import { LOAD_CRYPTOCURRENCIES, LoadCryptocurrenciesSuccess, LoadCryptocurrenciesFail } from './cryptocurrency.actions';
+import * as CryptocurrencyActions from './cryptocurrency.actions';
+import * as UIActions from '../ui/ui.actions';
 
-import { getCryptocurrencies } from '../../services/cryptocurrency.service';
+import { getCryptocurrencies, getCryptocurrency } from '../../services/cryptocurrency.service';
 
 export function* loadCryptocurrencies() {
   try {
     const data = yield getCryptocurrencies();
-    yield put(LoadCryptocurrenciesSuccess(data));
+    yield put(CryptocurrencyActions.LoadCryptocurrenciesSuccess(data));
   } catch (er) {
     console.log(er);
-    yield put(LoadCryptocurrenciesFail(er));
+    yield put(CryptocurrencyActions.LoadCryptocurrenciesFail(er));
   }
 }
 
 function* watchLoadCryptocurrencies() {
-  yield takeLatest(LOAD_CRYPTOCURRENCIES, loadCryptocurrencies);
+  yield takeLatest(CryptocurrencyActions.LOAD_CRYPTOCURRENCIES, loadCryptocurrencies);
+}
+
+export function* loadCryptocurrencyDetails(action) {
+  try {
+    const data = yield getCryptocurrency(action.payload);
+    yield put(CryptocurrencyActions.LoadCryptocurrencyDetailsSuccess(data));
+    yield put(UIActions.ShowCryptocurrencyDetailsModal());
+  } catch (er) {
+    console.log(er);
+    yield put(CryptocurrencyActions.LoadCryptocurrencyDetailsFail(er));
+  }
+}
+
+function* watchLoadCryptocurrencyDetails() {
+  yield takeLatest(CryptocurrencyActions.LOAD_CRYPTOCURRENCY_DETAILS, loadCryptocurrencyDetails);
 }
 
 export function* CryptocurrencySaga() {
-  yield all([watchLoadCryptocurrencies()]);
+  yield all([watchLoadCryptocurrencies(), watchLoadCryptocurrencyDetails()]);
 }
