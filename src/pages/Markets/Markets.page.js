@@ -3,21 +3,24 @@ import './Markets.page.scss';
 
 // REDUX
 import { connect } from 'react-redux';
-import { LoadCryptocurrencyDetails } from '../../store/cryptocurrency/cryptocurrency.actions';
 
 // COMPONENTS
 import { CryptocurrencyList } from '../../components/CryptocurrencyList/CryptocurrencyList';
 import { LoadingIndicator } from '../../components/common/LoadingIndicator/LoadingIndicator';
 
 // CONSTANTS
-//import { constants } from '../../constants/constants';
+import { constants } from '../../constants/constants';
 
-export const MarketsPage = ({ cryptocurrencies, isLoadingCryptocurrencies, LoadCryptocurrencyDetails }) => {
+export const MarketsPage = ({ cryptocurrencies, isLoadingCryptocurrencies, LoadCryptocurrencyDetails, history }) => {
+  const handleOnCryptocurrencyClick = cryptocurrencyId => {
+    history.push(constants.ROUTES.CRYPTOCURRENCY_DETAIL.replace(':cryptocurrencyId', cryptocurrencyId));
+  };
+
   return (
     <>
       {!isLoadingCryptocurrencies && (
         <div className="markets-page">
-          <CryptocurrencyList data={cryptocurrencies} onElementClick={element => console.log(element)} />
+          <CryptocurrencyList data={cryptocurrencies} onElementClick={handleOnCryptocurrencyClick} />
         </div>
       )}
       {isLoadingCryptocurrencies && <LoadingIndicator />}
@@ -32,9 +35,7 @@ function mapStateToProps(state, props) {
   };
 }
 
-const mapDispatchToProps = {
-  LoadCryptocurrencyDetails: id => LoadCryptocurrencyDetails(id),
-};
+const mapDispatchToProps = {};
 
 export default connect(
   mapStateToProps,

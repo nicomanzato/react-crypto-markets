@@ -10,9 +10,8 @@
   &__cryptocurrency-container {
     position: relative;
     align-items: center;
-    background-color: $primary-background-color;
     background: $primary-gradient;
-    box-shadow: 10px 10px 10px $primary-background-color;
+    box-shadow: 0 0 8px $primary-background-color;
     cursor: pointer;
     display: flex;
     flex-direction: column;

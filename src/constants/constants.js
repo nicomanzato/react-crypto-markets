@@ -6,4 +6,8 @@ export const constants = {
   RESOURCES: {
     SVG_PATH: '/assets/svg/{symbol}.svg',
   },
+  ROUTES: {
+    CRYPTOCURRENCY_DETAIL: '/cryptocurrency/:cryptocurrencyId',
+    CRYPTOCURRENCY_MARKETS: '/',
+  },
 };

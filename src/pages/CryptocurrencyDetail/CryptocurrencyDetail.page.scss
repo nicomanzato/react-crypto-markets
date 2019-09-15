@@ -1,0 +1,49 @@
+@import '../../variables.scss';
+
+.cryptocurrency-detail-page {
+  display: flex;
+  flex-direction: row;
+
+  &__content {
+    background: $primary-gradient;
+    padding: $spacings-M;
+    width: 100%;
+    margin: 0 $spacings-M 0 0;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: $spacings-M 0 $spacings-XXL 0;
+  }
+
+  &__icon {
+    width: 100px;
+  }
+
+  &__title {
+    align-items: center;
+    color: $primary-text-color;
+    display: flex;
+    font-family: $primary-font-family;
+    font-size: $font-size-title;
+    font-weight: bold;
+    justify-content: center;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  &__side-panel {
+    background: $primary-gradient;
+    width: 30%;
+    padding: $spacings-M;
+    min-width: 300px;
+  }
+}
+
+@media screen and (max-width: $tablet-breakpoint) {
+  .cryptocurrency-detail-page {
+  }
+}

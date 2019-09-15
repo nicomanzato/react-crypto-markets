@@ -23,7 +23,6 @@ export function* loadCryptocurrencyDetails(action) {
   try {
     const data = yield getCryptocurrency(action.payload);
     yield put(CryptocurrencyActions.LoadCryptocurrencyDetailsSuccess(data));
-    yield put(UIActions.ShowCryptocurrencyDetailsModal());
   } catch (er) {
     console.log(er);
     yield put(CryptocurrencyActions.LoadCryptocurrencyDetailsFail(er));
