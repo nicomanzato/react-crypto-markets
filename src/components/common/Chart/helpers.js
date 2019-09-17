@@ -1,5 +1,5 @@
 export const lineChartOptions = {
-  animation: true,
+  animation: false,
   legend: {
     display: false,
   },
