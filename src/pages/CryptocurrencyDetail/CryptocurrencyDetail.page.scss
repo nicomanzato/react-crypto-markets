@@ -5,7 +5,8 @@
   flex-direction: row;
 
   &__content {
-    background: $primary-gradient;
+    background-color: $tertiary-background-color;
+    box-shadow: 0 10px 10px $primary-background-color;
     padding: $spacings-M;
     width: 100%;
     margin: 0 $spacings-M 0 0;
@@ -25,7 +26,7 @@
 
   &__title {
     align-items: center;
-    color: $primary-text-color;
+    color: $tertiary-text-color;
     display: flex;
     font-family: $primary-font-family;
     font-size: $font-size-title;
@@ -36,10 +37,26 @@
   }
 
   &__side-panel {
-    background: $primary-gradient;
+    box-shadow: 0 10px 10px $primary-background-color;
+    background-color: $tertiary-background-color;
     width: 30%;
-    padding: $spacings-M;
+    padding: $spacings-S $spacings-L;
     min-width: 300px;
+  }
+
+  &__side-panel-element {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: $spacings-XL 0;
+  }
+
+  &__side-panel-label {
+    color: $primary-text-color;
+  }
+
+  &__side-panel-value {
+    color: $primary-text-color;
   }
 }
 

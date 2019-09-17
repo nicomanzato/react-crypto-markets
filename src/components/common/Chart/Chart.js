@@ -23,7 +23,7 @@ export const LineChart = ({ width, height, data, id, options = minimalLineChartO
     });
 
     return () => chart.destroy();
-  }, []);
+  }, [chartRef, data, id, options]);
 
   return (
     <div className={className}>

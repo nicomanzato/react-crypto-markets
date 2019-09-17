@@ -18,7 +18,7 @@ const App = ({
 }) => {
   useEffect(() => {
     LoadCryptocurrencies();
-  }, []);
+  }, [LoadCryptocurrencies]);
 
   return (
     <React.StrictMode>

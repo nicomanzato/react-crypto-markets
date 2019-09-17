@@ -17,10 +17,10 @@ export const lineChartOptions = {
     xAxes: [
       {
         gridLines: {
-          color: 'rgba(0, 0, 0, 0)',
+          color: 'rgba(0, 255, 0, 0)',
         },
         ticks: {
-          display: false,
+          display: true,
         },
       },
     ],

@@ -1,7 +1,6 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
 
 import * as CryptocurrencyActions from './cryptocurrency.actions';
-import * as UIActions from '../ui/ui.actions';
 
 import { getCryptocurrencies, getCryptocurrency } from '../../services/cryptocurrency.service';
 

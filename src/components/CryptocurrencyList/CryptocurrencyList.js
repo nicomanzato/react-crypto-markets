@@ -40,7 +40,7 @@ export const CryptocurrencyList = ({ data, onElementClick }) => {
               className={'cryptocurrency-list__cryptocurrency-price-change-chart'}
               width={310}
               id={'cryptocurrency-chart-' + cryptocurrency.id}
-              data={cryptocurrency.historicalPrice.splice(cryptocurrency.historicalPrice.length - 7, 7)}
+              data={cryptocurrency.historicalPrice.slice(cryptocurrency.historicalPrice.length - 7, 7)}
             />
           </div>
         </div>

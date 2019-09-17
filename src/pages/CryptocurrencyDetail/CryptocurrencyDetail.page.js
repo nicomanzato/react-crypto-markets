@@ -6,19 +6,20 @@ import { connect } from 'react-redux';
 import { LoadCryptocurrencyDetails } from '../../store/cryptocurrency/cryptocurrency.actions';
 
 // COMPONENTS
-import { LoadingIndicator } from '../../components/common/LoadingIndicator/LoadingIndicator';
+import { ChangeIndicator } from '../../components/ChangeIndicator/ChangeIndicator';
 import { CryptocurrencyIcon } from '../../components/CryptocurrencyIcon/CryptocurrencyIcon';
 import { LineChart } from '../../components/common/Chart/Chart';
+import { LoadingIndicator } from '../../components/common/LoadingIndicator/LoadingIndicator';
 
 // CONSTANTS
 import { lineChartOptions } from '../../components/common/Chart/helpers.js';
 //import { constants } from '../../constants/constants';
 
-export const CryptocurrencyDetailPage = ({ LoadCryptocurrencyDetails, isLoading, cryptocurrency }) => {
+export const CryptocurrencyDetailPage = ({ LoadCryptocurrencyDetails, isLoading, cryptocurrency, match }) => {
   useEffect(() => {
-    LoadCryptocurrencyDetails();
-  }, []);
-
+    LoadCryptocurrencyDetails(match.params.cryptocurrencyId);
+  }, [match.params.cryptocurrencyId, LoadCryptocurrencyDetails]);
+  console.log(cryptocurrency);
   return (
     <>
       {!isLoading && (
@@ -35,7 +36,47 @@ export const CryptocurrencyDetailPage = ({ LoadCryptocurrencyDetails, isLoading,
               options={lineChartOptions}
             />
           </div>
-          <div className="cryptocurrency-detail-page__side-panel">{cryptocurrency.name}</div>
+          <div className="cryptocurrency-detail-page__side-panel">
+            <div className="cryptocurrency-detail-page__side-panel-element">
+              <div className="cryptocurrency-detail-page__side-panel-label">Circulating Supply</div>
+              <div className="cryptocurrency-detail-page__side-panel-value">{cryptocurrency.circulating_supply}</div>
+            </div>
+
+            <div className="cryptocurrency-detail-page__side-panel-element">
+              <div className="cryptocurrency-detail-page__side-panel-label">Max Supply</div>
+              <div className="cryptocurrency-detail-page__side-panel-value">{cryptocurrency.max_supply}</div>
+            </div>
+
+            {cryptocurrency.quote && cryptocurrency.quote.USD && (
+              <div className="cryptocurrency-detail-page__side-panel-element">
+                <div className="cryptocurrency-detail-page__side-panel-label">Change (1h)</div>
+                <ChangeIndicator
+                  data={cryptocurrency.quote.USD.percent_change_1h}
+                  className={'cryptocurrency-detail-page__side-panel-value'}
+                />
+              </div>
+            )}
+
+            {cryptocurrency.quote && cryptocurrency.quote.USD && (
+              <div className="cryptocurrency-detail-page__side-panel-element">
+                <div className="cryptocurrency-detail-page__side-panel-label">Change (24h)</div>
+                <ChangeIndicator
+                  data={cryptocurrency.quote.USD.percent_change_24h}
+                  className={'cryptocurrency-detail-page__side-panel-value'}
+                />
+              </div>
+            )}
+
+            {cryptocurrency.quote && cryptocurrency.quote.USD && (
+              <div className="cryptocurrency-detail-page__side-panel-element">
+                <div className="cryptocurrency-detail-page__side-panel-label">Change (7d)</div>
+                <ChangeIndicator
+                  data={cryptocurrency.quote.USD.percent_change_7d}
+                  className={'cryptocurrency-detail-page__side-panel-value'}
+                />
+              </div>
+            )}
+          </div>
         </div>
       )}
       {isLoading && <LoadingIndicator />}
@@ -51,7 +92,7 @@ function mapStateToProps(state, props) {
 }
 
 const mapDispatchToProps = {
-  LoadCryptocurrencyDetails: () => LoadCryptocurrencyDetails(),
+  LoadCryptocurrencyDetails: cryptocurrencyId => LoadCryptocurrencyDetails(cryptocurrencyId),
 };
 
 export default connect(
