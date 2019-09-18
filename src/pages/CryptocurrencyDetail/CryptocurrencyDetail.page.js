@@ -37,17 +37,21 @@ export const CryptocurrencyDetailPage = ({ LoadCryptocurrencyDetails, isLoading,
             />
           </div>
           <div className="cryptocurrency-detail-page__side-panel">
-            <div className="cryptocurrency-detail-page__side-panel-element">
-              <div className="cryptocurrency-detail-page__side-panel-label">Circulating Supply</div>
-              <div className="cryptocurrency-detail-page__side-panel-value">{cryptocurrency.circulating_supply}</div>
-            </div>
+            {cryptocurrency.circulating_supply && (
+              <div className="cryptocurrency-detail-page__side-panel-element">
+                <div className="cryptocurrency-detail-page__side-panel-label">Circulating Supply</div>
+                <div className="cryptocurrency-detail-page__side-panel-value">{cryptocurrency.circulating_supply}</div>
+              </div>
+            )}
 
-            <div className="cryptocurrency-detail-page__side-panel-element">
-              <div className="cryptocurrency-detail-page__side-panel-label">Max Supply</div>
-              <div className="cryptocurrency-detail-page__side-panel-value">{cryptocurrency.max_supply}</div>
-            </div>
+            {cryptocurrency.max_supply && (
+              <div className="cryptocurrency-detail-page__side-panel-element">
+                <div className="cryptocurrency-detail-page__side-panel-label">Max Supply</div>
+                <div className="cryptocurrency-detail-page__side-panel-value">{cryptocurrency.max_supply}</div>
+              </div>
+            )}
 
-            {cryptocurrency.quote && cryptocurrency.quote.USD && (
+            {cryptocurrency.quote && cryptocurrency.quote.USD && cryptocurrency.quote.USD.percent_change_1h && (
               <div className="cryptocurrency-detail-page__side-panel-element">
                 <div className="cryptocurrency-detail-page__side-panel-label">Change (1h)</div>
                 <ChangeIndicator
@@ -57,7 +61,7 @@ export const CryptocurrencyDetailPage = ({ LoadCryptocurrencyDetails, isLoading,
               </div>
             )}
 
-            {cryptocurrency.quote && cryptocurrency.quote.USD && (
+            {cryptocurrency.quote && cryptocurrency.quote.USD && cryptocurrency.quote.USD.percent_change_24h && (
               <div className="cryptocurrency-detail-page__side-panel-element">
                 <div className="cryptocurrency-detail-page__side-panel-label">Change (24h)</div>
                 <ChangeIndicator
@@ -67,7 +71,7 @@ export const CryptocurrencyDetailPage = ({ LoadCryptocurrencyDetails, isLoading,
               </div>
             )}
 
-            {cryptocurrency.quote && cryptocurrency.quote.USD && (
+            {cryptocurrency.quote && cryptocurrency.quote.USD && cryptocurrency.quote.USD.percent_change_7d && (
               <div className="cryptocurrency-detail-page__side-panel-element">
                 <div className="cryptocurrency-detail-page__side-panel-label">Change (7d)</div>
                 <ChangeIndicator
