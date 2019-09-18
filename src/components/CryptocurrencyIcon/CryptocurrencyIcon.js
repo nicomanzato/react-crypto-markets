@@ -13,7 +13,7 @@ export const CryptocurrencyIcon = ({ className, data }) => {
 
   return (
     <div className={'cryptocurrency-icon'}>
-      {!error && (
+      {!error && data && (
         <img
           alt={data}
           src={constants.RESOURCES.SVG_PATH.replace('{symbol}', data.toLowerCase())}

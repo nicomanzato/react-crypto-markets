@@ -35,16 +35,14 @@ export const CryptocurrencyList = ({ data, onElementClick }) => {
             <div className="cryptocurrency-list__cryptocurrency-market-cap">
               ${formatMoneyReducer(cryptocurrency.quote.USD.market_cap)}
             </div>
+
+            <LineChart
+              className={'cryptocurrency-list__cryptocurrency-price-change-chart'}
+              width={310}
+              id={'cryptocurrency-chart-' + cryptocurrency.id}
+              data={cryptocurrency.historicalPrice.slice(-7)}
+            />
           </div>
-          <LineChart
-            className={'cryptocurrency-list__cryptocurrency-price-change-chart'}
-            width={310}
-            id={'cryptocurrency-chart-' + cryptocurrency.id}
-            data={{
-              id: cryptocurrency.id,
-              history: cryptocurrency.historicalPrice.splice(cryptocurrency.historicalPrice.length - 7, 7),
-            }}
-          />
         </div>
       ))}
     </div>

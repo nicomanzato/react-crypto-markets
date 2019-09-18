@@ -1,25 +1,33 @@
 import React, { useEffect } from 'react';
 import './App.scss';
 
+import { BrowserRouter } from 'react-router-dom';
+
 import { connect } from 'react-redux';
 import { LoadCryptocurrencies } from './store/cryptocurrency/cryptocurrency.actions';
 
 //import { Footer } from './components/footer/footer';
-import { Header } from './components/Header/Header';
-import { Background } from './components/Background/Background';
+import Header from './components/Header/Header';
 import { Router } from './Router';
 
-const App = ({ LoadCryptocurrencies }) => {
+const App = ({
+  LoadCryptocurrencies,
+  shouldDisplayCryptocurrencyDetailsModal,
+  HideCryptocurrencyDetailsModal,
+  detailedCryptocurrency,
+}) => {
   useEffect(() => {
     LoadCryptocurrencies();
   }, [LoadCryptocurrencies]);
+
   return (
     <React.StrictMode>
-      <div className="app">
-        <Background />
-        <Header />
-        <Router />
-      </div>
+      <BrowserRouter>
+        <div className="app">
+          <Header />
+          <Router />
+        </div>
+      </BrowserRouter>
     </React.StrictMode>
   );
 };

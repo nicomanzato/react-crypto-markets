@@ -1,9 +1,13 @@
 export const constants = {
   ENDPOINTS: {
     GET_CRYPTOCURRENCIES: '/api/cryptocurrency',
-    GET_CRYPTOCURRENCY: 'api/cryptocurrency/{cryptocurrencyId}',
+    GET_CRYPTOCURRENCY: '/api/cryptocurrency/{cryptocurrencyId}',
   },
   RESOURCES: {
     SVG_PATH: '/assets/svg/{symbol}.svg',
+  },
+  ROUTES: {
+    CRYPTOCURRENCY_DETAIL: '/cryptocurrency/:cryptocurrencyId',
+    CRYPTOCURRENCY_MARKETS: '/',
   },
 };

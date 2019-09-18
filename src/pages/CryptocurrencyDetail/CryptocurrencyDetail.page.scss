@@ -1,0 +1,83 @@
+@import '../../variables.scss';
+
+.cryptocurrency-detail-page {
+  display: flex;
+  flex-direction: row;
+
+  &__content {
+    background-color: $tertiary-background-color;
+    box-shadow: 0 10px 10px $primary-background-color;
+    margin: 0 $spacings-M 0 0;
+    padding: $spacings-M;
+    width: 100%;
+  }
+
+  &__header {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: $spacings-M 0 $spacings-XXL 0;
+  }
+
+  &__icon {
+    width: 100px;
+  }
+
+  &__title {
+    align-items: center;
+    color: $tertiary-text-color;
+    display: flex;
+    font-family: $primary-font-family;
+    font-size: $font-size-title;
+    font-weight: bold;
+    justify-content: center;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  &__price-history {
+    background-color: $primary-background-color;
+    color: $primary-text-color;
+    font-size: $font-size-title;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: $spacings-L 0;
+    padding: $spacings-M;
+    text-transform: uppercase;
+    width: 100%;
+  }
+
+  &__side-panel {
+    background-color: $tertiary-background-color;
+    box-shadow: 0 10px 10px $primary-background-color;
+    min-width: 300px;
+    padding: $spacings-S $spacings-L;
+    width: 30%;
+  }
+
+  &__side-panel-element {
+    border-bottom: 5px solid $secondary-border-color;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: $spacings-XL 0;
+  }
+
+  &__side-panel-element:last-child {
+    border-bottom: none;
+  }
+
+  &__side-panel-label {
+    color: $primary-text-color;
+  }
+
+  &__side-panel-value {
+    color: $primary-text-color;
+  }
+}
+
+@media screen and (max-width: $tablet-breakpoint) {
+  .cryptocurrency-detail-page {
+  }
+}

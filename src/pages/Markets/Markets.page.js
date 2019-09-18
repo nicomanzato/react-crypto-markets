@@ -6,19 +6,24 @@ import { connect } from 'react-redux';
 
 // COMPONENTS
 import { CryptocurrencyList } from '../../components/CryptocurrencyList/CryptocurrencyList';
+import { LoadingIndicator } from '../../components/common/LoadingIndicator/LoadingIndicator';
 
 // CONSTANTS
-//import { constants } from '../../constants/constants';
+import { constants } from '../../constants/constants';
 
-export const MarketsPage = ({ cryptocurrencies, isLoadingCryptocurrencies }) => {
+export const MarketsPage = ({ cryptocurrencies, isLoadingCryptocurrencies, LoadCryptocurrencyDetails, history }) => {
+  const handleOnCryptocurrencyClick = cryptocurrencyId => {
+    history.push(constants.ROUTES.CRYPTOCURRENCY_DETAIL.replace(':cryptocurrencyId', cryptocurrencyId));
+  };
+
   return (
     <>
       {!isLoadingCryptocurrencies && (
         <div className="markets-page">
-          <CryptocurrencyList data={cryptocurrencies} onElementClick={element => console.log(element)} />
+          <CryptocurrencyList data={cryptocurrencies} onElementClick={handleOnCryptocurrencyClick} />
         </div>
       )}
-      {isLoadingCryptocurrencies && 'Loading'}
+      {isLoadingCryptocurrencies && <LoadingIndicator />}
     </>
   );
 };
