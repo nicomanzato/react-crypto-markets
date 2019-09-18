@@ -29,6 +29,7 @@ export const CryptocurrencyDetailPage = ({ LoadCryptocurrencyDetails, isLoading,
               <CryptocurrencyIcon data={cryptocurrency.symbol} className={'cryptocurrency-detail-page__icon'} />
               <div className="cryptocurrency-detail-page__title">{cryptocurrency.name}</div>
             </div>
+            <div className="cryptocurrency-detail-page__price-history">Price History</div>
             <LineChart
               className={'cryptocurrency-detail-page__cryptocurrency-historic-price-chart'}
               id={'cryptocurrency-historic-price-chart-' + cryptocurrency.symbol}
