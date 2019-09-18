@@ -1,0 +1,23 @@
+@import '../../variables.scss';
+
+.footer {
+  align-items: center;
+  background-color: $quaternary-background-color;
+  box-shadow: 0 10px 10px $primary-background-color;
+  display: flex;
+  justify-content: center;
+  margin: $spacings-M 0 $spacings-M 0;
+  padding: $spacings-XL $spacings-XL;
+
+  &__repository-label {
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 2px;
+    padding: $spacings-XS $spacings-M;
+    background-color: white;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $quaternary-text-color;
+  }
+}

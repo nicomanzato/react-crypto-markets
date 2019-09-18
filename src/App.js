@@ -6,8 +6,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { LoadCryptocurrencies } from './store/cryptocurrency/cryptocurrency.actions';
 
-//import { Footer } from './components/footer/footer';
 import Header from './components/Header/Header';
+import { Footer } from './components/Footer/Footer';
 import { Router } from './Router';
 
 const App = ({
@@ -26,6 +26,7 @@ const App = ({
         <div className="app">
           <Header />
           <Router />
+          <Footer />
         </div>
       </BrowserRouter>
     </React.StrictMode>
