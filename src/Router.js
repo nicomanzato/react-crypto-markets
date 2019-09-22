@@ -5,11 +5,13 @@ import { constants } from './constants/constants';
 import MarketsPage from './pages/Markets/Markets.page';
 import CryptocurrencyDetailPage from './pages/CryptocurrencyDetail/CryptocurrencyDetail.page';
 
-export const Router = () => {
+export const Router = ({ className }) => {
   return (
-    <Switch>
-      <Route exact path={constants.ROUTES.CRYPTOCURRENCY_DETAIL} component={CryptocurrencyDetailPage} />
-      <Route component={MarketsPage} />
-    </Switch>
+    <div className={className}>
+      <Switch>
+        <Route exact path={constants.ROUTES.CRYPTOCURRENCY_DETAIL} component={CryptocurrencyDetailPage} />
+        <Route component={MarketsPage} />
+      </Switch>
+    </div>
   );
 };

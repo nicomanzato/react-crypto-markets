@@ -25,7 +25,7 @@ const App = ({
       <BrowserRouter>
         <div className="app">
           <Header />
-          <Router />
+          <Router className="app__router" />
           <Footer />
         </div>
       </BrowserRouter>

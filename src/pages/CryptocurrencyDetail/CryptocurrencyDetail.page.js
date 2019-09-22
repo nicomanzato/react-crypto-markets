@@ -13,6 +13,7 @@ import { LoadingIndicator } from '../../components/common/LoadingIndicator/Loadi
 
 // CONSTANTS
 import { lineChartOptions } from '../../components/common/Chart/helpers.js';
+import { formatMoney, formatMoneyReducer } from '../../utils/utils';
 //import { constants } from '../../constants/constants';
 
 export const CryptocurrencyDetailPage = ({ LoadCryptocurrencyDetails, isLoading, cryptocurrency, match }) => {
@@ -27,7 +28,9 @@ export const CryptocurrencyDetailPage = ({ LoadCryptocurrencyDetails, isLoading,
           <div className="cryptocurrency-detail-page__content">
             <div className="cryptocurrency-detail-page__header">
               <CryptocurrencyIcon data={cryptocurrency.symbol} className={'cryptocurrency-detail-page__icon'} />
-              <div className="cryptocurrency-detail-page__title">{cryptocurrency.name}</div>
+              <div className="cryptocurrency-detail-page__title">
+                {cryptocurrency.name} ({cryptocurrency.symbol})
+              </div>
             </div>
             <div className="cryptocurrency-detail-page__price-history">Price History</div>
             <LineChart
@@ -38,6 +41,11 @@ export const CryptocurrencyDetailPage = ({ LoadCryptocurrencyDetails, isLoading,
             />
           </div>
           <div className="cryptocurrency-detail-page__side-panel">
+            {cryptocurrency.quote && cryptocurrency.quote.USD && cryptocurrency.quote.USD.price && (
+              <div className="cryptocurrency-detail-page__side-panel-element cryptocurrency-detail-page__side-panel-big-element">
+                ${formatMoney(cryptocurrency.quote.USD.price)}
+              </div>
+            )}
             {cryptocurrency.circulating_supply && (
               <div className="cryptocurrency-detail-page__side-panel-element">
                 <div className="cryptocurrency-detail-page__side-panel-label">Circulating Supply</div>

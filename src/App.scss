@@ -9,4 +9,8 @@ html {
   position: relative;
   margin: auto;
   max-width: $desktop-breakpoint;
+
+  &__router {
+    min-height: calc(100vh - 325px);
+  }
 }

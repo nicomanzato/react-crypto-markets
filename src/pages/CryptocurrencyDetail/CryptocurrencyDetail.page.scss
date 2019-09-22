@@ -75,6 +75,13 @@
   &__side-panel-value {
     color: $primary-text-color;
   }
+
+  &__side-panel-big-element {
+    display: flex;
+    justify-content: center;
+    color: $primary-text-color;
+    font-size: $font-size-header;
+  }
 }
 
 @media screen and (max-width: $tablet-breakpoint) {
