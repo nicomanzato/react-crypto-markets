@@ -1,10 +1,10 @@
 import React from 'react';
-import './CryptocurrencyList.scss';
+import './cryptocurrency-list.scss';
 
 // COMPONENTS
-import { ChangeIndicator } from '../ChangeIndicator/ChangeIndicator';
-import { CryptocurrencyIcon } from '../CryptocurrencyIcon/CryptocurrencyIcon';
-import { LineChart } from '../common/Chart/Chart';
+import { ChangeIndicator } from '../change-indicator/change-indicator';
+import { CryptocurrencyIcon } from '../cryptocurrency-icon/cryptocurrency-icon';
+import { LineChart } from '../common/chart/chart';
 
 // CONSTANTS
 //import { constants } from '../../constants/constants';
@@ -35,13 +35,14 @@ export const CryptocurrencyList = ({ data, onElementClick }) => {
             <div className="cryptocurrency-list__cryptocurrency-market-cap">
               ${formatMoneyReducer(cryptocurrency.quote.USD.market_cap)}
             </div>
-
-            <LineChart
-              className={'cryptocurrency-list__cryptocurrency-price-change-chart'}
-              width={310}
-              id={'cryptocurrency-chart-' + cryptocurrency.id}
-              data={cryptocurrency.historicalPrice.slice(-7)}
-            />
+            {false && (
+              <LineChart
+                className={'cryptocurrency-list__cryptocurrency-price-change-chart'}
+                width={310}
+                id={'cryptocurrency-chart-' + cryptocurrency.id}
+                data={cryptocurrency.historicalPrice.slice(-7)}
+              />
+            )}
           </div>
         </div>
       ))}

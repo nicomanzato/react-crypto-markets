@@ -1,30 +1,32 @@
 import React, { useEffect } from 'react';
-import './CryptocurrencyDetail.page.scss';
+import './cryptocurrency-detail.page.scss';
 
 // REDUX
 import { connect } from 'react-redux';
 import { LoadCryptocurrencyDetails } from '../../store/cryptocurrency/cryptocurrency.actions';
 
 // COMPONENTS
-import { ChangeIndicator } from '../../components/ChangeIndicator/ChangeIndicator';
-import { CryptocurrencyIcon } from '../../components/CryptocurrencyIcon/CryptocurrencyIcon';
-import { LineChart } from '../../components/common/Chart/Chart';
-import { LoadingIndicator } from '../../components/common/LoadingIndicator/LoadingIndicator';
+import { ChangeIndicator } from '../../components/change-indicator/change-indicator';
+import { CryptocurrencyIcon } from '../../components/cryptocurrency-icon/cryptocurrency-icon';
+import { LineChart } from '../../components/common/chart/chart';
+import { LoadingIndicator } from '../../components/common/loading-indicator/loading-indicator';
 
 // CONSTANTS
-import { lineChartOptions } from '../../components/common/Chart/helpers.js';
+import { lineChartOptions } from '../../components/common/chart/helpers.js';
 import { formatMoney, formatMoneyReducer } from '../../utils/utils';
 //import { constants } from '../../constants/constants';
 
 export const CryptocurrencyDetailPage = ({ LoadCryptocurrencyDetails, isLoading, cryptocurrency, match }) => {
   useEffect(() => {
-    LoadCryptocurrencyDetails(match.params.cryptocurrencyId);
-  }, [match.params.cryptocurrencyId, LoadCryptocurrencyDetails]);
-  console.log(cryptocurrency);
+    if (match && match.params && match.params.cryptocurrencyId) {
+      LoadCryptocurrencyDetails(match.params.cryptocurrencyId);
+    }
+  }, [match, LoadCryptocurrencyDetails]);
+
   return (
     <>
       {!isLoading && (
-        <div className="cryptocurrency-detail-page">
+        <div className="page cryptocurrency-detail-page">
           <div className="cryptocurrency-detail-page__content">
             <div className="cryptocurrency-detail-page__header">
               <CryptocurrencyIcon data={cryptocurrency.symbol} className={'cryptocurrency-detail-page__icon'} />

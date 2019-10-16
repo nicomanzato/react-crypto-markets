@@ -1,5 +1,5 @@
 import React from 'react';
-import './Footer.scss';
+import './footer.scss';
 
 // CONSTANTS
 import { constants } from '../../constants/constants';

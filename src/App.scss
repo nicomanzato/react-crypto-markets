@@ -11,6 +11,29 @@ html {
   max-width: $desktop-breakpoint;
 
   &__router {
-    min-height: calc(100vh - 325px);
+    min-height: calc(100vh - 116px);
+    margin: 0 0 0 380px;
+    max-width: 100%;
+    padding: 0 0 0 $spacings-XL;
+  }
+
+  &__side-panel {
+    margin: 0 $spacings-XL $spacings-L 0;
+    position: absolute;
+    max-height: 700px;
+    height: 100%;
+  }
+
+  &__side-panel-container {
+    position: relative;
+    min-height: 100%;
+  }
+
+  &__content {
+    margin: 100px 0 0 0;
+    padding: 0 0 $spacings-M 0;
+    position: relative;
+    display: flex;
+    flex-direction: row;
   }
 }

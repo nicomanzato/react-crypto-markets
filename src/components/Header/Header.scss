@@ -1,19 +1,27 @@
 @import '../../variables.scss';
 
 .header {
+  align-items: center;
   background-color: $quaternary-background-color;
-  border-bottom: 10px solid $blueBondi;
-  box-shadow: 0 10px 10px $primary-background-color;
+  border-bottom: 5px solid $blueBondi;
+  box-shadow: 0 0 10px $primary-background-color;
   display: flex;
   justify-content: space-between;
   margin: 0 0 $spacings-M 0;
-  padding: $spacings-XXL $spacings-XL;
+  max-width: 1440px;
+  min-height: rem-calc(80);
+  padding: 0 $spacings-M;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
 
   &__title {
     color: $primary-text-color;
     cursor: pointer;
     font-size: $font-size-header;
     font-weight: bold;
+    font-family: $secondary-font-family;
     letter-spacing: 5px;
     text-align: center;
     text-decoration: none;

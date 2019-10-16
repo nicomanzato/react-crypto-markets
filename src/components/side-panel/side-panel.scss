@@ -1,0 +1,11 @@
+@import '../../variables.scss';
+
+.side-panel {
+  background-color: $tertiary-background-color;
+  box-shadow: 0 0 8px $primary-background-color;
+  color: $primary-text-color;
+  min-height: 520px;
+  min-width: 380px;
+  padding: $spacings-S;
+  width: 380px;
+}

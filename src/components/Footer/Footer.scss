@@ -6,8 +6,10 @@
   box-shadow: 0 10px 10px $primary-background-color;
   display: flex;
   justify-content: center;
-  margin: $spacings-M 0 $spacings-M 0;
+  margin: $spacings-M 0 0 0;
   padding: $spacings-XL $spacings-XL;
+  width: 100%;
+  z-index: 15;
 
   &__repository-label {
     cursor: pointer;

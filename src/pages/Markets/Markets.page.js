@@ -1,12 +1,12 @@
 import React from 'react';
-import './Markets.page.scss';
+import './markets.page.scss';
 
 // REDUX
 import { connect } from 'react-redux';
 
 // COMPONENTS
-import { CryptocurrencyList } from '../../components/CryptocurrencyList/CryptocurrencyList';
-import { LoadingIndicator } from '../../components/common/LoadingIndicator/LoadingIndicator';
+import { CryptocurrencyList } from '../../components/cryptocurrency-list/cryptocurrency-list';
+import { LoadingIndicator } from '../../components/common/loading-indicator/loading-indicator';
 
 // CONSTANTS
 import { constants } from '../../constants/constants';
@@ -19,7 +19,7 @@ export const MarketsPage = ({ cryptocurrencies, isLoadingCryptocurrencies, LoadC
   return (
     <>
       {!isLoadingCryptocurrencies && (
-        <div className="markets-page">
+        <div className="page markets-page">
           <CryptocurrencyList data={cryptocurrencies} onElementClick={handleOnCryptocurrencyClick} />
         </div>
       )}
