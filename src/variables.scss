@@ -28,6 +28,10 @@ $secondary-background-color: $greyBright;
 $tertiary-background-color: $blueMirage;
 $quaternary-background-color: $blueMirage;
 
+// gradient
+
+$primary-gradient: linear-gradient(to bottom, $blueBigStone, $blueMirage);
+
 // border-colors
 $primary-border-color: $greyBright;
 $secondary-border-color: $blackEbonyClay;

@@ -42,56 +42,6 @@ export const CryptocurrencyDetailPage = ({ LoadCryptocurrencyDetails, isLoading,
               options={lineChartOptions}
             />
           </div>
-          <div className="cryptocurrency-detail-page__side-panel">
-            {cryptocurrency.quote && cryptocurrency.quote.USD && cryptocurrency.quote.USD.price && (
-              <div className="cryptocurrency-detail-page__side-panel-element cryptocurrency-detail-page__side-panel-big-element">
-                ${formatMoney(cryptocurrency.quote.USD.price)}
-              </div>
-            )}
-            {cryptocurrency.circulating_supply && (
-              <div className="cryptocurrency-detail-page__side-panel-element">
-                <div className="cryptocurrency-detail-page__side-panel-label">Circulating Supply</div>
-                <div className="cryptocurrency-detail-page__side-panel-value">{cryptocurrency.circulating_supply}</div>
-              </div>
-            )}
-
-            {cryptocurrency.max_supply && (
-              <div className="cryptocurrency-detail-page__side-panel-element">
-                <div className="cryptocurrency-detail-page__side-panel-label">Max Supply</div>
-                <div className="cryptocurrency-detail-page__side-panel-value">{cryptocurrency.max_supply}</div>
-              </div>
-            )}
-
-            {cryptocurrency.quote && cryptocurrency.quote.USD && cryptocurrency.quote.USD.percent_change_1h && (
-              <div className="cryptocurrency-detail-page__side-panel-element">
-                <div className="cryptocurrency-detail-page__side-panel-label">Change (1h)</div>
-                <ChangeIndicator
-                  data={cryptocurrency.quote.USD.percent_change_1h}
-                  className={'cryptocurrency-detail-page__side-panel-value'}
-                />
-              </div>
-            )}
-
-            {cryptocurrency.quote && cryptocurrency.quote.USD && cryptocurrency.quote.USD.percent_change_24h && (
-              <div className="cryptocurrency-detail-page__side-panel-element">
-                <div className="cryptocurrency-detail-page__side-panel-label">Change (24h)</div>
-                <ChangeIndicator
-                  data={cryptocurrency.quote.USD.percent_change_24h}
-                  className={'cryptocurrency-detail-page__side-panel-value'}
-                />
-              </div>
-            )}
-
-            {cryptocurrency.quote && cryptocurrency.quote.USD && cryptocurrency.quote.USD.percent_change_7d && (
-              <div className="cryptocurrency-detail-page__side-panel-element">
-                <div className="cryptocurrency-detail-page__side-panel-label">Change (7d)</div>
-                <ChangeIndicator
-                  data={cryptocurrency.quote.USD.percent_change_7d}
-                  className={'cryptocurrency-detail-page__side-panel-value'}
-                />
-              </div>
-            )}
-          </div>
         </div>
       )}
       {isLoading && <LoadingIndicator />}

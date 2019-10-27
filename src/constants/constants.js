@@ -4,6 +4,7 @@ export const constants = {
     GET_CRYPTOCURRENCY: '/api/cryptocurrency/{cryptocurrencyId}',
   },
   RESOURCES: {
+    LOGO_IMAGE_URL: '/assets/img/logo.png',
     REPOSITORY_IMAGE_URL: '/assets/img/github.png',
     SVG_PATH: '/assets/svg/{symbol}.svg',
   },

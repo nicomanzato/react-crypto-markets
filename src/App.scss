@@ -12,16 +12,15 @@ html {
 
   &__router {
     min-height: calc(100vh - 116px);
-    margin: 0 0 0 380px;
     max-width: 100%;
+    width: 100%;
     padding: 0 0 0 $spacings-XL;
   }
 
   &__side-panel {
-    margin: 0 $spacings-XL $spacings-L 0;
-    position: absolute;
-    max-height: 700px;
-    height: 100%;
+    margin: 0 $spacings-S $spacings-L 0;
+    position: sticky;
+    top: 20px;
   }
 
   &__side-panel-container {
@@ -30,10 +29,10 @@ html {
   }
 
   &__content {
-    margin: 100px 0 0 0;
     padding: 0 0 $spacings-M 0;
     position: relative;
     display: flex;
+    min-width: 100%;
     flex-direction: row;
   }
 }

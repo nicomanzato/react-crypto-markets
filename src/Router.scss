@@ -1,6 +1,6 @@
 .page-enter {
   opacity: 0;
-  transform: translate(50%, 0);
+  transform: translate(50px, 0);
 }
 
 .page-enter-active {
@@ -15,6 +15,6 @@
 
 .page-exit-active {
   opacity: 0;
-  transform: translate(50%, 0);
+  transform: translate(50px, 0);
   transition: opacity 600ms, transform 600ms;
 }
