@@ -28,8 +28,9 @@ $secondary-background-color: $greyBright;
 $tertiary-background-color: $blueMirage;
 $quaternary-background-color: $blueMirage;
 
-// gradients
-$primary-gradient: linear-gradient(180deg, $blueBigStone, $blueMirage);
+// gradient
+
+$primary-gradient: linear-gradient(to bottom, $blueBigStone, $blueMirage);
 
 // border-colors
 $primary-border-color: $greyBright;
@@ -52,6 +53,7 @@ $font-size-subtitle: rem-calc(20);
 
 // font families
 $primary-font-family: 'Montserrat', 'Arial';
+$secondary-font-family: 'Roboto', 'Arial';
 
 // breakpoints
 $smartphone-breakpoint: rem-calc(640);

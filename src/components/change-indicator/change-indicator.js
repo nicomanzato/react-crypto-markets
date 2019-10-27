@@ -1,5 +1,5 @@
 import React from 'react';
-import './ChangeIndicator.scss';
+import './change-indicator.scss';
 
 import classNames from 'classnames/bind';
 
