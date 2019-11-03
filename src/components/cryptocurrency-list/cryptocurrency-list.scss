@@ -16,10 +16,14 @@
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    min-height: 520px;
+    min-height: rem-calc(520px);
     margin: $spacings-L 0 0 0;
     padding: $spacings-L $spacings-L 0 $spacings-L;
-    width: 300px;
+    width: rem-calc(300px);
+  }
+
+  &__cryptocurrency-container:hover {
+    box-shadow: $interactable-box-shadow;
   }
 
   &__cryptocurrency-rank {
@@ -29,7 +33,7 @@
     font-size: $font-size-title;
     font-weight: bold;
     justify-content: center;
-    letter-spacing: 3px;
+    letter-spacing: rem-calc(3px);
     text-transform: uppercase;
     position: absolute;
     right: 0;
@@ -37,11 +41,14 @@
   }
 
   &__cryptocurrency-icon {
-    width: 100px;
+    height: rem-calc(100px);
+    min-height: rem-calc(100px);
+    min-width: rem-calc(100px);
+    width: rem-calc(100px);
   }
 
   &__cryptocurrency-list-item {
-    height: 100px;
+    height: rem-calc(100px);
     text-align: center;
     width: 100%;
   }
@@ -53,7 +60,7 @@
     font-size: $font-size-title;
     font-weight: bold;
     justify-content: center;
-    letter-spacing: 3px;
+    letter-spacing: rem-calc(3px);
     text-transform: uppercase;
   }
 

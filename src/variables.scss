@@ -1,4 +1,4 @@
-@import 'base.scss';
+@import './utils/utils.scss';
 
 // palette
 $blackEbonyClay: #222831;
@@ -19,8 +19,7 @@ $primary-red-negative: $redValencia;
 //text colors
 $primary-text-color: $blueMirage;
 $secondary-text-color: $whiteGallery;
-$tertiary-text-color: $whiteGallery;
-$quaternary-text-color: $blueMirage;
+$interactable-text-color: $blueBondi;
 
 // background colors
 $primary-background-color: $whiteGallery;
@@ -29,10 +28,11 @@ $tertiary-background-color: $white;
 $quaternary-background-color: $whiteGallery;
 
 // box shadow
-$primary-box-shadow: 0 0 rem-calc(3px) $blackEbonyClay;
+$primary-box-shadow: 0 0 rem-calc(0) $blackEbonyClay;
+$interactable-box-shadow: 0 0 rem-calc(0) $blueBondi;
 
 // gradient
-$primary-gradient: linear-gradient(0deg, #667eea 0%, #764ba2 100%);
+$primary-gradient: linear-gradient(140deg, #6a11cb 0%, #2575fc 100%);
 
 // border-colors
 $primary-border: rem-calc(3px) solid $whiteGallery;
@@ -60,6 +60,9 @@ $font-size-subtitle: rem-calc(20);
 // font families
 $primary-font-family: 'Montserrat', 'Arial';
 $secondary-font-family: 'Roboto', 'Arial';
+
+// transition durations
+$primary-transition-duration: 300ms;
 
 // breakpoints
 $smartphone-breakpoint: rem-calc(640);

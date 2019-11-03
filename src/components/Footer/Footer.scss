@@ -2,10 +2,10 @@
 
 .footer {
   align-items: center;
-  background-color: $primary-background-color;
+  background-color: $tertiary-background-color;
   display: flex;
   justify-content: center;
-  padding: $spacings-XL $spacings-XL;
+  padding: $spacings-M;
   width: 100%;
   z-index: 15;
 
@@ -17,6 +17,6 @@
     border-radius: $primary-border-radius;
     text-transform: uppercase;
     font-weight: bold;
-    color: $quaternary-text-color;
+    color: $primary-text-color;
   }
 }

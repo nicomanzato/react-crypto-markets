@@ -1,7 +1,8 @@
 @import '../../variables.scss';
 
 .side-panel {
-  background-color: $greyBright;
+  background-color: $secondary-background-color;
+  background-image: $primary-gradient;
   color: $primary-text-color;
   min-width: rem-calc(320px);
   width: rem-calc(320px);
@@ -49,12 +50,13 @@
     cursor: pointer;
   }
 
-  &__navigation-element:hover:not(&__navigation-element--selected) {
-    background-color: $quaternary-background-color;
-    color: $primary-text-color;
+  &__navigation-element:hover {
+    color: $interactable-text-color;
   }
 
   &__navigation-element--selected {
-    background-color: $secondary-background-color;
+    background-color: $primary-background-color;
+    margin: $spacings-M $spacings-L 0 $spacings-L;
+    color: $primary-text-color;
   }
 }

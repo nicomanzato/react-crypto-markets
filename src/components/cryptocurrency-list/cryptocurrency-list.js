@@ -35,6 +35,7 @@ export const CryptocurrencyList = ({ data, onElementClick }) => {
             <div className="cryptocurrency-list__cryptocurrency-market-cap">
               ${formatMoneyReducer(cryptocurrency.quote.USD.market_cap)}
             </div>
+
             <LineChart
               className={'cryptocurrency-list__cryptocurrency-price-change-chart'}
               width={310}
