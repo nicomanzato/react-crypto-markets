@@ -1,6 +1,17 @@
 @import '../../variables.scss';
 
 .logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__title {
+    color: $secondary-text-color;
+    font-size: $font-size-title;
+    text-transform: uppercase;
+    padding: 0 0 0 $spacings-S;
+  }
+
   &__image {
     width: 42px;
     height: 42px;

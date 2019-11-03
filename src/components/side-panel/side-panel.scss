@@ -1,27 +1,31 @@
 @import '../../variables.scss';
 
 .side-panel {
-  background-color: $tertiary-background-color;
-  box-shadow: 0 0 8px $primary-background-color;
+  background-color: $greyBright;
   color: $primary-text-color;
-  min-width: 380px;
-  width: 380px;
-  padding: $spacings-S;
+  min-width: rem-calc(320px);
+  width: rem-calc(320px);
+  height: 100%;
+  max-height: 100vh;
 
   &__portfolio {
     align-items: center;
-    background: $primary-gradient;
-    border-radius: 10px;
-    border: 3px solid grey;
+    background: $primary-background-color;
+    border-radius: $secondary-border-radius;
     cursor: pointer;
     display: flex;
     font-size: $font-size-title;
     font-weight: bold;
-    height: 120px;
+    height: rem-calc(80px);
     justify-content: center;
     padding: $spacings-L;
+    margin: $spacings-L;
     position: relative;
     text-transform: uppercase;
+  }
+
+  &__title {
+    padding: $spacings-M;
   }
 
   &__portfolio::after {
@@ -38,6 +42,19 @@
   }
 
   &__navigation-element {
-    padding: $spacings-M 0;
+    padding: $spacings-M $spacings-L;
+    color: $secondary-text-color;
+    margin: $spacings-M $spacings-L 0 $spacings-L;
+    border-radius: $secondary-border-radius;
+    cursor: pointer;
+  }
+
+  &__navigation-element:hover:not(&__navigation-element--selected) {
+    background-color: $quaternary-background-color;
+    color: $primary-text-color;
+  }
+
+  &__navigation-element--selected {
+    background-color: $secondary-background-color;
   }
 }

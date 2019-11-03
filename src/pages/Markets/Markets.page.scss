@@ -1,6 +1,11 @@
 @import '../../variables.scss';
 
 .markets-page {
+  &__title {
+    padding: rem-calc(10px 0 20px 0);
+    text-transform: uppercase;
+    font-size: $font-size-header;
+  }
 }
 
 @media screen and (max-width: $tablet-breakpoint) {

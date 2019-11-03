@@ -15,9 +15,6 @@ export const Header = ({ className, data, history }) => {
   };
   return (
     <div className="header">
-      <div onClick={handleOnTitleClick} className="header__title">
-        <Logo />
-      </div>
       <div className="header__nav">
         <span href="#" className="header__nav-element"></span>
       </div>

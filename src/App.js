@@ -8,14 +8,11 @@ import { LoadCryptocurrencies } from './store/cryptocurrency/cryptocurrency.acti
 
 import Header from './components/header/header';
 import { Footer } from './components/footer/footer';
-import { SidePanel } from './components/side-panel/side-panel';
+import SidePanel from './components/side-panel/side-panel';
 import { Router } from './Router';
 
 const App = ({
   LoadCryptocurrencies,
-  shouldDisplayCryptocurrencyDetailsModal,
-  HideCryptocurrencyDetailsModal,
-  detailedCryptocurrency,
 }) => {
   useEffect(() => {
     LoadCryptocurrencies();

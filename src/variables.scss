@@ -5,11 +5,11 @@ $blackEbonyClay: #222831;
 $blueBigStone: #162a40;
 $blueBondi: #00adb5;
 $blueMirage: #161928;
-$greyBright: #393e46;
-$whiteGallery: #eeeeee;
-
-$redValencia: #d84437;
 $greenHaze: #01a368;
+$greyBright: #393e46;
+$redValencia: #d84437;
+$white: #ffffff;
+$whiteGallery: #eeeeee;
 
 // COLORS
 
@@ -17,24 +17,30 @@ $primary-green-positive: $greenHaze;
 $primary-red-negative: $redValencia;
 
 //text colors
-$primary-text-color: $whiteGallery;
-$secondary-text-color: $blueBondi;
+$primary-text-color: $blueMirage;
+$secondary-text-color: $whiteGallery;
 $tertiary-text-color: $whiteGallery;
 $quaternary-text-color: $blueMirage;
 
 // background colors
-$primary-background-color: $blackEbonyClay;
-$secondary-background-color: $greyBright;
-$tertiary-background-color: $blueMirage;
-$quaternary-background-color: $blueMirage;
+$primary-background-color: $whiteGallery;
+$secondary-background-color: $blueMirage;
+$tertiary-background-color: $white;
+$quaternary-background-color: $whiteGallery;
+
+// box shadow
+$primary-box-shadow: 0 0 rem-calc(3px) $blackEbonyClay;
 
 // gradient
-
-$primary-gradient: linear-gradient(to bottom, $blueBigStone, $blueMirage);
+$primary-gradient: linear-gradient(0deg, #667eea 0%, #764ba2 100%);
 
 // border-colors
-$primary-border-color: $greyBright;
-$secondary-border-color: $blackEbonyClay;
+$primary-border: rem-calc(3px) solid $whiteGallery;
+$secondary-border: rem-calc(3px) solid $blueBondi;
+
+// border-radius
+$primary-border-radius: rem-calc(5px);
+$secondary-border-radius: rem-calc(10px);
 
 // spacings
 $spacings-XS: rem-calc(4);

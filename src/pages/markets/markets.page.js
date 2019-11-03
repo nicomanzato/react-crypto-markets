@@ -20,6 +20,7 @@ export const MarketsPage = ({ cryptocurrencies, isLoadingCryptocurrencies, LoadC
     <>
       {!isLoadingCryptocurrencies && (
         <div className="page markets-page">
+          <h1 className="markets-page__title">Explore Markets</h1>
           <CryptocurrencyList data={cryptocurrencies} onElementClick={handleOnCryptocurrencyClick} />
         </div>
       )}

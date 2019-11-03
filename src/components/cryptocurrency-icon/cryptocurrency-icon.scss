@@ -7,8 +7,8 @@
 
   &__backup-icon {
     align-items: center;
-    border-radius: 15px;
-    border: 3px solid $primary-border-color;
+    border-radius: $secondary-border-radius;
+    border: $secondary-border;
     color: $primary-text-color;
     display: flex;
     font-size: $font-size-subtitle;

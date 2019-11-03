@@ -1,7 +1,6 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { constants } from './constants/constants';
-import { CSSTransition } from 'react-transition-group';
 
 import MarketsPage from './pages/markets/markets.page';
 import CryptocurrencyDetailPage from './pages/cryptocurrency-detail/cryptocurrency-detail.page';
@@ -16,17 +15,15 @@ const routes = [
 export const Router = ({ className }) => {
   return (
     <div className={className}>
-      {routes.map(({ path, Component }) => (
-        <Route key={path} exact path={path}>
-          {({ match, history }) => {
-            return (
-              <CSSTransition in={match != null} timeout={600} classNames="page" unmountOnExit>
-                <Component match={match} history={history} />
-              </CSSTransition>
-            );
-          }}
-        </Route>
-      ))}
+      <Switch>
+        {routes.map(({ path, Component }) => (
+          <Route key={path} exact path={path}>
+            {({ match, history }) => {
+              return <Component match={match} history={history} />;
+            }}
+          </Route>
+        ))}
+      </Switch>
     </div>
   );
 };

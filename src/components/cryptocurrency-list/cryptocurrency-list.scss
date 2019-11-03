@@ -11,12 +11,13 @@
     position: relative;
     align-items: center;
     background-color: $tertiary-background-color;
-    box-shadow: 0 0 8px $primary-background-color;
+    border-radius: $primary-border-radius;
+    box-shadow: $primary-box-shadow;
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    min-height: 500px;
-    margin: 0 0 $spacings-L 0;
+    min-height: 520px;
+    margin: $spacings-L 0 0 0;
     padding: $spacings-L $spacings-L 0 $spacings-L;
     width: 300px;
   }

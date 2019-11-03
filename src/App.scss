@@ -2,25 +2,25 @@
 
 html {
   font-family: $primary-font-family;
-  background-color: $secondary-background-color;
+  background-color: $primary-background-color;
 }
 
 .app {
   position: relative;
   margin: auto;
-  max-width: $desktop-breakpoint;
+  //max-width: rem-calc(1440px);
 
   &__router {
-    min-height: calc(100vh - 116px);
+    min-height: calc(100vh);
     max-width: 100%;
     width: 100%;
-    padding: 0 0 0 $spacings-XL;
+    position: relative;
+    padding: $spacings-M $spacings-M 0 $spacings-M;
   }
 
   &__side-panel {
-    margin: 0 $spacings-S $spacings-L 0;
     position: sticky;
-    top: 20px;
+    top: 0;
   }
 
   &__side-panel-container {

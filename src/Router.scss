@@ -1,20 +1,23 @@
+/*
 .page-enter {
   opacity: 0;
-  transform: translate(50px, 0);
+  transform: translate(5%, 0);
 }
 
 .page-enter-active {
   opacity: 1;
-  transform: translate(0);
+  transform: none;
   transition: opacity 600ms, transform 600ms;
 }
 
 .page-exit {
   opacity: 1;
+  transform: none;
 }
 
 .page-exit-active {
   opacity: 0;
-  transform: translate(50px, 0);
+  transform: translate(5%, 0);
   transition: opacity 600ms, transform 600ms;
 }
+*/
