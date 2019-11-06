@@ -1,8 +1,11 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
 
 import * as CryptocurrencyActions from './cryptocurrency.actions';
+import * as UiActions from '../ui/ui.actions';
 
 import { getCryptocurrencies, getCryptocurrency } from '../../services/cryptocurrency.service';
+
+import { constants } from '../../constants/constants';
 
 export function* loadCryptocurrencies() {
   try {
@@ -32,6 +35,16 @@ function* watchLoadCryptocurrencyDetails() {
   yield takeLatest(CryptocurrencyActions.LOAD_CRYPTOCURRENCY_DETAILS, loadCryptocurrencyDetails);
 }
 
+export function* loadCryptocurrenciesDetailsSuccess(action) {
+  yield put(
+    UiActions.MoveToPage(constants.ROUTES.CRYPTOCURRENCY_DETAIL.replace(':cryptocurrencyId', action.payload[0].symbol))
+  );
+}
+
+function* watchLoadCryptocurrenciesDetailsSuccess() {
+  yield takeLatest(CryptocurrencyActions.LOAD_CRYPTOCURRENCY_DETAILS_SUCCESS, loadCryptocurrenciesDetailsSuccess);
+}
+
 export function* CryptocurrencySaga() {
-  yield all([watchLoadCryptocurrencies(), watchLoadCryptocurrencyDetails()]);
+  yield all([watchLoadCryptocurrencies(), watchLoadCryptocurrencyDetails(), watchLoadCryptocurrenciesDetailsSuccess()]);
 }

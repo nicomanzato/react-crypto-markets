@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.scss';
 
-import { BrowserRouter } from 'react-router-dom';
-
 import { connect } from 'react-redux';
 import { LoadCryptocurrencies } from './store/cryptocurrency/cryptocurrency.actions';
 
@@ -11,27 +9,25 @@ import { Footer } from './components/footer/footer';
 import SidePanel from './components/side-panel/side-panel';
 import { Router } from './Router';
 
-const App = ({
-  LoadCryptocurrencies,
-}) => {
+import { withRouter } from 'react-router-dom';
+
+const App = ({ LoadCryptocurrencies, SetBrowserHistory, history }) => {
   useEffect(() => {
     LoadCryptocurrencies();
   }, [LoadCryptocurrencies]);
 
   return (
     <React.StrictMode>
-      <BrowserRouter>
-        <div className="app">
-          <Header />
-          <div className="app__content">
-            <div className="app__side-panel-container">
-              <SidePanel className="app__side-panel" />
-            </div>
-            <Router className="app__router" />
+      <div className="app">
+        <Header />
+        <div className="app__content">
+          <div className="app__side-panel-container">
+            <SidePanel className="app__side-panel" />
           </div>
-          <Footer />
+          <Router className="app__router" />
         </div>
-      </BrowserRouter>
+        <Footer />
+      </div>
     </React.StrictMode>
   );
 };

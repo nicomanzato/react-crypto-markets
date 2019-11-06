@@ -4,15 +4,18 @@ import App from './App';
 import 'normalize.css';
 import 'typeface-montserrat';
 import 'typeface-roboto';
+import { BrowserRouter } from 'react-router-dom';
 
-import { Provider } from 'react-redux';
+import ProviderWithRouter from './ProviderWithRouter';
 import { store } from './store';
 //import * as serviceWorker from './serviceWorker';
 require('dotenv').config();
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <BrowserRouter>
+    <ProviderWithRouter>
+      <App />
+    </ProviderWithRouter>
+  </BrowserRouter>,
   document.getElementById('root')
 );

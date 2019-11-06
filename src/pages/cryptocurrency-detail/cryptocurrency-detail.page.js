@@ -18,12 +18,16 @@ import { formatMoney, formatMoneyReducer } from '../../utils/utils';
 
 export const CryptocurrencyDetailPage = ({ LoadCryptocurrencyDetails, isLoading, cryptocurrency, match }) => {
   useEffect(() => {
-    if (match && match.params && match.params.cryptocurrencyId) {
+    if (
+      match &&
+      match.params &&
+      match.params.cryptocurrencyId &&
+      cryptocurrency &&
+      cryptocurrency.symbol !== match.params.cryptocurrencyId
+    ) {
       LoadCryptocurrencyDetails(match.params.cryptocurrencyId);
     }
   }, [match, LoadCryptocurrencyDetails]);
-
-  console.log(cryptocurrency);
 
   return (
     <>

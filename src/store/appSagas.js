@@ -1,7 +1,10 @@
-import { all } from 'redux-saga/effects';
+import { all, fork } from 'redux-saga/effects';
 
 import { CryptocurrencySaga } from './cryptocurrency/cryptocurrency.saga';
+import { UiSaga } from './ui/ui.saga';
 
-export default function* appSagas() {
-  yield all([CryptocurrencySaga()]);
+const sagas = [CryptocurrencySaga, UiSaga];
+
+export default function* appSagas(context = {}) {
+  yield all(sagas.map(saga => fork(saga, context)));
 }
