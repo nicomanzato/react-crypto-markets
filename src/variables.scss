@@ -28,8 +28,8 @@ $tertiary-background-color: $white;
 $quaternary-background-color: $whiteGallery;
 
 // box shadow
-$primary-box-shadow: 0 0 rem-calc(0) $blackEbonyClay;
-$interactable-box-shadow: 0 0 rem-calc(0) $blueBondi;
+$primary-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.07);
+$interactable-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.07), 0 20px 25px 0 rgba(0, 0, 0, 0.1);
 
 // gradient
 $primary-gradient: linear-gradient(140deg, #6a11cb 0%, #2575fc 100%);

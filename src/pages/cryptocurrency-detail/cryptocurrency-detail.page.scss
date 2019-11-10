@@ -39,7 +39,8 @@
     display: flex;
     flex-direction: column;
     padding: $spacings-M $spacings-L;
-    min-width: rem-calc(330px);
+    min-width: rem-calc(300px);
+    width: 20%;
     border-radius: $primary-border-radius;
     color: $primary-text-color;
     background-color: $tertiary-background-color;
