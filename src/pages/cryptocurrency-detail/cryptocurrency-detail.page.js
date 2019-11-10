@@ -72,14 +72,16 @@ export const CryptocurrencyDetailPage = ({ LoadCryptocurrencyDetails, isLoading,
                 </span>
               </div>
 
-              <div className="cryptocurrency-detail-page__cryptocurrency-side-details-element">
-                <span className="cryptocurrency-detail-page__cryptocurrency-side-details-element-title">
-                  Total Supply
-                </span>
-                <span className="cryptocurrency-detail-page__cryptocurrency-side-details-element-value">
-                  {formatMoney(cryptocurrency.max_supply)}
-                </span>
-              </div>
+              {cryptocurrency.max_supply && cryptocurrency.max_supply > 0 && (
+                <div className="cryptocurrency-detail-page__cryptocurrency-side-details-element">
+                  <span className="cryptocurrency-detail-page__cryptocurrency-side-details-element-title">
+                    Total Supply
+                  </span>
+                  <span className="cryptocurrency-detail-page__cryptocurrency-side-details-element-value">
+                    {formatMoney(cryptocurrency.max_supply)}
+                  </span>
+                </div>
+              )}
             </div>
 
             <div className="cryptocurrency-detail-page__historic-price-chart">
