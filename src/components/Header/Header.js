@@ -15,9 +15,7 @@ export const Header = ({ className, data, history }) => {
   };
   return (
     <div className="header">
-      <div className="header__nav">
-        <span href="#" className="header__nav-element"></span>
-      </div>
+      <Logo />
     </div>
   );
 };

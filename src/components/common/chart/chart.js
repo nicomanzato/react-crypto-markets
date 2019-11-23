@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Chart from 'chart.js';
+import $ from 'jquery';
 
 import { minimalLineChartOptions, defaultData } from './helpers';
 
-export const LineChart = ({ width, height, data, id, options = minimalLineChartOptions, className }) => {
+export const LineChart = ({ height, data, id, options = minimalLineChartOptions, className }) => {
   const [chartRef] = useState(React.createRef());
 
   useEffect(() => {
@@ -17,6 +18,8 @@ export const LineChart = ({ width, height, data, id, options = minimalLineChartO
 
     chartData.datasets[0].label = id;
     const chart = new Chart(myChartRef, {
+      responsive:true,
+      maintainAspectRatio: false,
       type: 'line',
       data: chartData,
       options: options,
@@ -24,10 +27,10 @@ export const LineChart = ({ width, height, data, id, options = minimalLineChartO
 
     return () => chart.destroy();
   }, [chartRef, data, id, options]);
-
+  
   return (
     <div className={className}>
-      <canvas id={id} ref={chartRef} width={width} height={height} alt={id} />
+      <canvas id={id} ref={chartRef} height={height} alt={id} style={{width: '100%'}} />
     </div>
   );
 };

@@ -1,32 +1,26 @@
 @import '../../variables.scss';
 
 .header {
-  align-items: center;
-  background-color: $quaternary-background-color;
-  box-shadow: 0 0 10px $primary-background-color;
-  display: flex;
-  justify-content: space-between;
+  box-shadow: 0 0 10px black;
+  height: 60px;
+  background: $primary-gradient;
   display: none;
-  min-height: rem-calc(80px);
-  padding: 0 $spacings-M;
-  width: 100%;
+  position: sticky;
+  top: 0;
   z-index: 10;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 0 0 $spacings-S;
+}
 
-  &__nav {
+@media screen and (max-width: $tablet-breakpoint) and (min-width: $mobile-breakpoint) {
+  .header {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
   }
+}
 
-  &__nav-element {
-    color: $primary-text-color;
-    cursor: pointer;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-
-  &__nav-element:hover {
-    color: $secondary-text-color;
+@media screen and (max-width: $mobile-breakpoint) {
+  .header {
+    display: flex;
   }
 }

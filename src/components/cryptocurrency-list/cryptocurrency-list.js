@@ -38,7 +38,6 @@ export const CryptocurrencyList = ({ data, onElementClick }) => {
 
             <LineChart
               className={'cryptocurrency-list__cryptocurrency-price-change-chart'}
-              width={310}
               id={'cryptocurrency-chart-' + cryptocurrency.id}
               data={cryptocurrency.historicalPrice.slice(-7)}
             />

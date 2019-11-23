@@ -19,7 +19,7 @@
     min-height: rem-calc(520px);
     margin: $spacings-L 0 0 0;
     padding: $spacings-L $spacings-L 0 $spacings-L;
-    width: rem-calc(300px);
+    width: rem-calc(280px);
   }
 
   &__cryptocurrency-container:hover {
@@ -112,10 +112,32 @@
     left: -$spacings-S;
     bottom: -$spacings-S;
     opacity: 0.5;
+    width: calc(100% + 10px);
   }
 }
 
-@media screen and (max-width: $tablet-breakpoint) {
+@media screen and (max-width: $smalldesktop-breakpoint) and (min-width: $tablet-breakpoint) {
   .cryptocurrency-list {
+    &__cryptocurrency-container {
+      width: rem-calc(230px);
+    }
+  }
+}
+
+@media screen and (max-width: $tablet-breakpoint) and (min-width: $mobile-breakpoint) {
+  .cryptocurrency-list {
+    &__cryptocurrency-container {
+      width: rem-calc(340px);
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  .cryptocurrency-list {
+    justify-content: center;
+
+    &__cryptocurrency-container {
+      width: 100%;
+    }
   }
 }

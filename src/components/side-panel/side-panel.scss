@@ -60,3 +60,22 @@
     color: $primary-text-color;
   }
 }
+
+@media screen and (max-width: $smalldesktop-breakpoint) and (min-width: $tablet-breakpoint) {
+  .side-panel {
+    min-width: rem-calc(275px);
+    width: rem-calc(275px);
+  }
+}
+
+@media screen and (max-width: $tablet-breakpoint) and (min-width: $mobile-breakpoint) {
+  .side-panel {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  .side-panel {
+    display: none;
+  }
+}

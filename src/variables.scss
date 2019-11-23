@@ -65,6 +65,7 @@ $secondary-font-family: 'Roboto', 'Arial';
 $primary-transition-duration: 300ms;
 
 // breakpoints
-$smartphone-breakpoint: rem-calc(640);
-$tablet-breakpoint: rem-calc(1024);
-$desktop-breakpoint: rem-calc(1440);
+$mobile-breakpoint: rem-calc(425px);
+$tablet-breakpoint: rem-calc(768px);
+$smalldesktop-breakpoint: rem-calc(1024px);
+$desktop-breakpoint: rem-calc(1440px);
