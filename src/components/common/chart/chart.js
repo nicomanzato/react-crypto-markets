@@ -18,7 +18,7 @@ export const LineChart = ({ height, data, id, options = minimalLineChartOptions,
 
     chartData.datasets[0].label = id;
     const chart = new Chart(myChartRef, {
-      responsive:true,
+      responsive: false,
       maintainAspectRatio: false,
       type: 'line',
       data: chartData,

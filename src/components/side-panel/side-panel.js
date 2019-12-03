@@ -34,9 +34,9 @@ const SidePanel = ({ className, data, history }) => {
         >
           Explore Markets
         </div>
-        <div onClick={handleOnDashboardClick} className="side-panel__navigation-element">
+{/*         <div onClick={handleOnDashboardClick} className="side-panel__navigation-element">
           Dashboard
-        </div>
+        </div> */}
       </div>
     </aside>
   );
