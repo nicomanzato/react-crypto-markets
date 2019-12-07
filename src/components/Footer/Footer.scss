@@ -2,10 +2,11 @@
 
 .footer {
   align-items: center;
-  background-color: $tertiary-background-color;
+  background-color: $primary-background-color;
   display: flex;
   justify-content: center;
   padding: $spacings-M;
+  margin: $spacings-M 0 0 0;
   width: 100%;
   z-index: 15;
 
@@ -13,7 +14,7 @@
     cursor: pointer;
     text-decoration: none;
     padding: $spacings-XS $spacings-M;
-    background-color: white;
+    background-color: $tertiary-background-color;
     border-radius: $primary-border-radius;
     text-transform: uppercase;
     font-weight: bold;

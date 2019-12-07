@@ -8,11 +8,10 @@ import { LoadCryptocurrencyDetails } from '../../store/cryptocurrency/cryptocurr
 // COMPONENTS
 import { ChangeIndicator } from '../../components/change-indicator/change-indicator';
 import { CryptocurrencyIcon } from '../../components/cryptocurrency-icon/cryptocurrency-icon';
-import { LineChart } from '../../components/common/chart/chart';
+import { ChartHD } from '../../components/common/chart-hd/chart-hd';
 import { LoadingIndicator } from '../../components/common/loading-indicator/loading-indicator';
 
 // CONSTANTS
-import { lineChartOptions } from '../../components/common/chart/helpers.js';
 import { formatMoney, formatMoneyReducer } from '../../utils/utils';
 //import { constants } from '../../constants/constants';
 
@@ -41,6 +40,11 @@ export const CryptocurrencyDetailPage = ({ LoadCryptocurrencyDetails, isLoading,
           </div>
 
           <div className="cryptocurrency-detail-page__content">
+            <div className="cryptocurrency-detail-page__historic-price-chart">
+            <ChartHD
+              data={cryptocurrency.historicalPrice}
+            />
+            </div>
             <div className="cryptocurrency-detail-page__cryptocurrency-side-details">
               <div className="cryptocurrency-detail-page__cryptocurrency-side-details-element">
                 <span className="cryptocurrency-detail-page__cryptocurrency-side-details-element-title">
@@ -82,15 +86,6 @@ export const CryptocurrencyDetailPage = ({ LoadCryptocurrencyDetails, isLoading,
                   </span>
                 </div>
               )}
-            </div>
-
-            <div className="cryptocurrency-detail-page__historic-price-chart">
-              <LineChart
-                className={'cryptocurrency-detail-page__historic-price-chart'}
-                id={'cryptocurrency-historic-price-chart-' + cryptocurrency.symbol}
-                data={cryptocurrency.historicalPrice}
-                options={lineChartOptions}
-              />
             </div>
           </div>
         </div>

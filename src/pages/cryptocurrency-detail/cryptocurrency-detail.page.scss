@@ -25,22 +25,26 @@
 
   &__content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    padding: $spacings-L 0 0 0;
   }
 
   &__cryptocurrency-side-details {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
-    justify-content: space-between;
+    padding: 0 0 0 $spacings-M;
+    justify-content: flex-start;
   }
 
   &__cryptocurrency-side-details-element {
     display: flex;
+    box-shadow: $primary-box-shadow;
     flex-direction: column;
     padding: $spacings-M $spacings-L;
+    margin: 0 0 $spacings-M 0;
     min-width: rem-calc(300px);
-    width: 20%;
+    width: 100%;
     border-radius: $primary-border-radius;
     color: $primary-text-color;
     background-color: $tertiary-background-color;
@@ -64,9 +68,9 @@
   }
 
   &__historic-price-chart {
-    margin: $spacings-L 0 0 0;
-    height: rem-calc(600px);
-    width: rem-calc(1150px);
+    box-shadow: $primary-box-shadow;
+    padding: $spacings-L $spacings-XS;
+    min-width: rem-calc(1150px);
     background-color: $tertiary-background-color;
     border-radius: $primary-border-radius;
   }

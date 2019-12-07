@@ -24,9 +24,12 @@ const App = ({ LoadCryptocurrencies, SetBrowserHistory, history }) => {
           <div className="app__side-panel-container">
             <SidePanel className="app__side-panel" />
           </div>
-          <Router className="app__router" />
+          <div className="app__content-main">
+            <Router className="app__router" />
+            <Footer />
+          </div>
         </div>
-        <Footer />
+
       </div>
     </React.StrictMode>
   );
