@@ -21,7 +21,7 @@ export class ChartHD extends Component {
                 },
                 yaxis: {
                     labels: {
-                      formatter: (value) => Number.parseFloat(value).toFixed(2)
+                      formatter: (value) => value < 0.3 ? Number.parseFloat(value).toFixed(4) : Number.parseFloat(value).toFixed(2)
                     },
                   },
             },
