@@ -18,12 +18,17 @@ export class ChartHD extends Component {
                 },
                 xaxis: {
                     categories: props.data.map((day) => day.date)
-                }
+                },
+                yaxis: {
+                    labels: {
+                      formatter: (value) => Number.parseFloat(value).toFixed(2)
+                    },
+                  },
             },
             series: [
                 {
                     name: "Price USD",
-                    data: props.data.map((day) => Number.parseFloat(day.price).toFixed(2))
+                    data: props.data.map((day) => day.price)
                 }
             ]
         };
