@@ -1,26 +1,24 @@
 import React from 'react';
 import './side-panel.scss';
 
-import { withRouter } from 'react-router-dom';
-
 // COMPONENTS
 import { Logo } from '../logo/logo';
 
 // CONSTANTS
-import { constants } from '../../constants/constants';
+// import { constants } from '../../constants/constants';
 
-const SidePanel = ({ className, data, history }) => {
+const SidePanel = ({ className, onMoveToPage }) => {
   const handleOnTitleClick = () => {
     // history.push(constants.ROUTES.CRYPTOCURRENCY_MARKETS);
   };
 
   const handleOnExploreMarketsClick = () => {
-    history.push(constants.ROUTES.CRYPTOCURRENCY_MARKETS);
+    onMoveToPage('/');
   };
 
-  const handleOnDashboardClick = () => {
-    // history.push(constants.ROUTES.CRYPTOCURRENCY_MARKETS);
-  };
+  // const handleOnDashboardClick = () => {
+  //   // history.push(constants.ROUTES.CRYPTOCURRENCY_MARKETS);
+  // };
 
   return (
     <aside className={className + ' side-panel'}>
@@ -42,4 +40,4 @@ const SidePanel = ({ className, data, history }) => {
   );
 };
 
-export default withRouter(SidePanel);
+export default SidePanel;

@@ -36,7 +36,7 @@ export const genericGet = async ({ url }, mock) => {
   if (process.env.NODE_ENV !== 'development') {
     data = (await Axios.get(url)).data;
   } else {
-    await new Promise(r => setTimeout(r, 2000));
+    await new Promise(r => setTimeout(r, 1000));
     data = mock;
   }
 

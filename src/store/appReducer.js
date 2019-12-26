@@ -2,10 +2,12 @@ import { combineReducers } from 'redux';
 
 import { CryptocurrencyReducer } from './cryptocurrency/cryptocurrency.reducer';
 import { UIReducer } from './ui/ui.reducer';
+import { connectRouter } from 'connected-react-router';
 
-const AppReducer = combineReducers({
+const createRootReducer = (history) => combineReducers({
+  router: connectRouter(history),
   CryptocurrencyReducer,
-  UIReducer,
+  UIReducer
 });
 
-export default AppReducer;
+export default createRootReducer;

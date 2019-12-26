@@ -9,9 +9,6 @@ import { LoadCryptocurrencyDetails } from '../../store/cryptocurrency/cryptocurr
 import { CryptocurrencyList } from '../../components/cryptocurrency-list/cryptocurrency-list';
 import { LoadingIndicator } from '../../components/common/loading-indicator/loading-indicator';
 
-// CONSTANTS
-import { constants } from '../../constants/constants';
-
 export const MarketsPage = ({ cryptocurrencies, isLoadingCryptocurrencies, LoadCryptocurrencyDetails, history }) => {
   const handleOnCryptocurrencyClick = cryptocurrencyId => {
     LoadCryptocurrencyDetails(cryptocurrencyId);

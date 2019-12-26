@@ -1,4 +1,4 @@
-import { SHOW_CRYPTOCURENCY_DETAILS_MODAL, HIDE_CRYPTOCURENCY_DETAILS_MODAL, SET_BROWSER_HISTORY } from './ui.actions';
+import { SHOW_CRYPTOCURENCY_DETAILS_MODAL, HIDE_CRYPTOCURENCY_DETAILS_MODAL } from './ui.actions';
 
 const initialState = {
   shouldDisplayCryptocurrencyDetailsModal: false,

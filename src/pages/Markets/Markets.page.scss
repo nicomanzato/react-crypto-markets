@@ -9,5 +9,9 @@
 
 @media screen and (max-width: $tablet-breakpoint) {
   .markets-page {
+    &__title {
+      text-transform: uppercase;
+      font-size: $font-size-header-mobile;
+    }
   }
 }

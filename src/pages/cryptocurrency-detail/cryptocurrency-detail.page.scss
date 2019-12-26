@@ -5,8 +5,8 @@
   flex-direction: column;
 
   &__icon {
-    width: 30px;
-    height: 30px;
+    width: rem-calc(30px);
+    height: rem-calc(30px);
   }
 
   &__header {
@@ -32,7 +32,7 @@
   &__cryptocurrency-side-details {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    min-width: rem-calc(400px);
     padding: 0 0 0 $spacings-M;
     justify-content: flex-start;
   }
@@ -44,7 +44,6 @@
     padding: $spacings-M $spacings-L;
     margin: 0 0 $spacings-M 0;
     min-width: rem-calc(300px);
-    width: 100%;
     border-radius: $primary-border-radius;
     color: $primary-text-color;
     background-color: $tertiary-background-color;
@@ -70,7 +69,7 @@
   &__historic-price-chart {
     box-shadow: $primary-box-shadow;
     padding: $spacings-L $spacings-XS;
-    min-width: rem-calc(1150px);
+    width: 100%;
     background-color: $tertiary-background-color;
     border-radius: $primary-border-radius;
   }
@@ -78,5 +77,19 @@
 
 @media screen and (max-width: $tablet-breakpoint) {
   .cryptocurrency-detail-page {
+
+    &__title {
+      font-size: $font-size-header-mobile;
+    }
+
+    &__content {
+      flex-direction: column;
+      padding: $spacings-L 0 0 0;
+    }
+
+    &__cryptocurrency-side-details {
+      min-width: 0;
+      padding: $spacings-L 0 0 0;
+    }
   }
 }

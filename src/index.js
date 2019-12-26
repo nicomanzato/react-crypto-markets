@@ -7,7 +7,6 @@ import 'typeface-roboto';
 import { BrowserRouter } from 'react-router-dom';
 
 import ProviderWithRouter from './ProviderWithRouter';
-import { store } from './store';
 //import * as serviceWorker from './serviceWorker';
 require('dotenv').config();
 

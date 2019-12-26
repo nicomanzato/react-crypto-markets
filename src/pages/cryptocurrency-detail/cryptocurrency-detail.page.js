@@ -26,7 +26,7 @@ export const CryptocurrencyDetailPage = ({ LoadCryptocurrencyDetails, isLoading,
     ) {
       LoadCryptocurrencyDetails(match.params.cryptocurrencyId);
     }
-  }, [match, LoadCryptocurrencyDetails]);
+  }, [match, LoadCryptocurrencyDetails, cryptocurrency]);
 
   return (
     <>
